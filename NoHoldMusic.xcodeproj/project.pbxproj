@@ -10,6 +10,9 @@
 		3433D7041CD31FBD0044EFA3 /* NoHoldMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3433D70B1CD31FBE0044EFA3 /* NoHoldMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3433D7001CD31FBD0044EFA3 /* NoHoldMusic.framework */; };
 		3433D7101CD31FBE0044EFA3 /* NoHoldMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3433D70F1CD31FBE0044EFA3 /* NoHoldMusicTests.m */; };
+		348E3AC21CE2A0FD00522044 /* FloatBalloon.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* FloatBalloon.h */; };
+		348E3AC31CE2A0FD00522044 /* FloatBalloon.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC01CE2A0FD00522044 /* FloatBalloon.m */; };
+		348E3AC41CE2A0FD00522044 /* noun_232963_cc-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		3433D70A1CD31FBE0044EFA3 /* NoHoldMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoHoldMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3433D70F1CD31FBE0044EFA3 /* NoHoldMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoHoldMusicTests.m; sourceTree = "<group>"; };
 		3433D7111CD31FBE0044EFA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		348E3ABF1CE2A0FD00522044 /* FloatBalloon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatBalloon.h; sourceTree = "<group>"; };
+		348E3AC01CE2A0FD00522044 /* FloatBalloon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatBalloon.m; sourceTree = "<group>"; };
+		348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "noun_232963_cc-2.svg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 		3433D7021CD31FBD0044EFA3 /* NoHoldMusic */ = {
 			isa = PBXGroup;
 			children = (
+				348E3ABE1CE2A0FD00522044 /* FloatImage */,
 				3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */,
 				3433D7051CD31FBD0044EFA3 /* Info.plist */,
 			);
@@ -86,6 +93,17 @@
 			path = NoHoldMusicTests;
 			sourceTree = "<group>";
 		};
+		348E3ABE1CE2A0FD00522044 /* FloatImage */ = {
+			isa = PBXGroup;
+			children = (
+				348E3ABF1CE2A0FD00522044 /* FloatBalloon.h */,
+				348E3AC01CE2A0FD00522044 /* FloatBalloon.m */,
+				348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */,
+			);
+			name = FloatImage;
+			path = floatImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -94,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3433D7041CD31FBD0044EFA3 /* NoHoldMusic.h in Headers */,
+				348E3AC21CE2A0FD00522044 /* FloatBalloon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348E3AC41CE2A0FD00522044 /* noun_232963_cc-2.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348E3AC31CE2A0FD00522044 /* FloatBalloon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +335,7 @@
 				INFOPLIST_FILE = NoHoldMusic/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fascinatinggroup.NoHoldMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -332,6 +354,7 @@
 				INFOPLIST_FILE = NoHoldMusic/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fascinatinggroup.NoHoldMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -379,6 +402,7 @@
 				3433D7161CD31FBE0044EFA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3433D7171CD31FBE0044EFA3 /* Build configuration list for PBXNativeTarget "NoHoldMusicTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +411,7 @@
 				3433D7191CD31FBE0044EFA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
