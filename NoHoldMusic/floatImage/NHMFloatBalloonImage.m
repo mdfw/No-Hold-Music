@@ -21,10 +21,10 @@
 //  A copy of the image with appropriate licensing is available at
 //     https://thenounproject.com/term/balloon/232963/
 
-#import "FloatBalloon.h"
+#import "NHMFloatBalloonImage.h"
 
 
-@implementation FloatBalloon
+@implementation NHMFloatBalloonImage
 
 #pragma mark Initialization
 
@@ -129,7 +129,7 @@
 {
     NSImage* imageOfBalloon = [[NSImage alloc] initWithSize: NSMakeSize(512, 512)];
     [imageOfBalloon lockFocus];
-    [FloatBalloon drawBalloonWithBalloonFillColor: balloonFillColor];
+    [NHMFloatBalloonImage drawBalloonWithBalloonFillColor: balloonFillColor];
 
     [imageOfBalloon unlockFocus];
 

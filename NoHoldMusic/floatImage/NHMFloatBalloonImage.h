@@ -18,7 +18,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface FloatBalloon : NSObject
+@interface NHMFloatBalloonImage : NSObject
 
 // Drawing Methods
 + (void)drawBalloonWithBalloonFillColor: (NSColor*)balloonFillColor;
