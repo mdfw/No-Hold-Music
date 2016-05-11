@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NHMHelpWindow">
+            <connections>
+                <outlet property="toolbar" destination="9LF-IP-YEi" id="Wad-zW-kgl"/>
+                <outlet property="toolbarNavButtons" destination="0vO-ij-x9m" id="dox-ac-fiq"/>
+                <outlet property="toolbarSearchField" destination="zid-DB-A8H" id="1Ho-V6-hfM"/>
+                <outlet property="toolbarShareButton" destination="DpO-xQ-5NP" id="eMK-TG-aof"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Help" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="278" y="558" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="429AD54B-6D73-41AA-B9CD-7818A55A048F" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="small" id="9LF-IP-YEi" customClass="NHMHelpWindowToolbar">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="FeE-ui-NXa"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="3vs-eW-dlu"/>
+                    <toolbarItem implicitItemIdentifier="B8F38C4D-B972-4FC4-8E13-F928CD38325A" explicitItemIdentifier="nav" label="navigation" paletteLabel="Navigation" id="l4U-86-1ED" userLabel="Navigation">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="65" height="24"/>
+                        <size key="maxSize" width="71" height="25"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="0vO-ij-x9m">
+                            <rect key="frame" x="0.0" y="14" width="71" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" borderStyle="border" alignment="left" style="separated" trackingMode="selectOne" id="5rH-Jy-HVA">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment image="NSGoLeftTemplate" width="32"/>
+                                    <segment image="NSGoRightTemplate" width="32" selected="YES" tag="1"/>
+                                </segments>
+                            </segmentedCell>
+                        </segmentedControl>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="05960070-2A5A-4F0C-9F9E-CB4F0FE2617A" explicitItemIdentifier="float" label="Float" paletteLabel="Float" image="NSEnterFullScreenTemplate" id="uCB-kj-Q19">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="18" height="24"/>
+                        <size key="maxSize" width="18" height="24"/>
+                        <button key="view" verticalHuggingPriority="750" id="92S-E7-31G" userLabel="Float button">
+                            <rect key="frame" x="8" y="14" width="18" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSEnterFullScreenTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Bdu-fy-Mix">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="floatButtonPressed:" target="-2" id="2Qy-1W-lT7"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="0008B7F2-C3BB-471A-8F53-2863348EBB82" explicitItemIdentifier="search" label="Search" paletteLabel="Search" id="ClA-rp-3tx" userLabel="Search">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="22"/>
+                        <size key="maxSize" width="96" height="22"/>
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" id="zid-DB-A8H">
+                            <rect key="frame" x="0.0" y="14" width="96" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="lWc-C3-Sg5">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                        </searchField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="36F1DB4A-6252-48BB-AFA7-EBD713ED76E3" explicitItemIdentifier="share" label="Share" paletteLabel="Share" image="NSShareTemplate" id="nez-H9-A3C">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="32" height="24"/>
+                        <size key="maxSize" width="44" height="45"/>
+                        <button key="view" verticalHuggingPriority="750" id="DpO-xQ-5NP">
+                            <rect key="frame" x="3" y="14" width="32" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSShareTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LRb-VG-Nsy">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="shareButtonPressed:" target="-2" id="rao-gI-1jU"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="l4U-86-1ED"/>
+                    <toolbarItem reference="nez-H9-A3C"/>
+                    <toolbarItem reference="3vs-eW-dlu"/>
+                    <toolbarItem reference="ClA-rp-3tx"/>
+                    <toolbarItem reference="uCB-kj-Q19"/>
+                </defaultToolbarItems>
+                <connections>
+                    <outlet property="delegate" destination="-2" id="Y5M-zc-4cH"/>
+                    <outlet property="floatButton" destination="92S-E7-31G" id="Sre-oI-KMj"/>
+                </connections>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="348"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSEnterFullScreenTemplate" width="15" height="15"/>
+        <image name="NSGoLeftTemplate" width="9" height="12"/>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
+        <image name="NSShareTemplate" width="11" height="16"/>
+    </resources>
+</document>

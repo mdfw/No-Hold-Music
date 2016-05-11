@@ -10,9 +10,17 @@
 		3433D7041CD31FBD0044EFA3 /* NoHoldMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3433D70B1CD31FBE0044EFA3 /* NoHoldMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3433D7001CD31FBD0044EFA3 /* NoHoldMusic.framework */; };
 		3433D7101CD31FBE0044EFA3 /* NoHoldMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3433D70F1CD31FBE0044EFA3 /* NoHoldMusicTests.m */; };
-		348E3AC21CE2A0FD00522044 /* FloatBalloon.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* FloatBalloon.h */; };
-		348E3AC31CE2A0FD00522044 /* FloatBalloon.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC01CE2A0FD00522044 /* FloatBalloon.m */; };
+		348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */; };
+		348E3AC31CE2A0FD00522044 /* NHMFloatBalloonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC01CE2A0FD00522044 /* NHMFloatBalloonImage.m */; };
 		348E3AC41CE2A0FD00522044 /* noun_232963_cc-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */; };
+		348E3AC81CE2AC5B00522044 /* NHMHelpWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3AC51CE2AC5B00522044 /* NHMHelpWindow.h */; };
+		348E3AC91CE2AC5B00522044 /* NHMHelpWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC61CE2AC5B00522044 /* NHMHelpWindow.m */; };
+		348E3ACA1CE2AC5B00522044 /* NHMHelpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348E3AC71CE2AC5B00522044 /* NHMHelpWindow.xib */; };
+		349D13BC1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */; };
+		349D13C41CE38DAA0018D631 /* NHMHelpWindowToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13C21CE38DAA0018D631 /* NHMHelpWindowToolbar.h */; };
+		349D13C51CE38DAA0018D631 /* NHMHelpWindowToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349D13C31CE38DAA0018D631 /* NHMHelpWindowToolbar.m */; };
+		349D13C81CE3D6980018D631 /* NSToolbar+NHMToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13C61CE3D6980018D631 /* NSToolbar+NHMToolbar.h */; };
+		349D13C91CE3D6980018D631 /* NSToolbar+NHMToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349D13C71CE3D6980018D631 /* NSToolbar+NHMToolbar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +40,17 @@
 		3433D70A1CD31FBE0044EFA3 /* NoHoldMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoHoldMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3433D70F1CD31FBE0044EFA3 /* NoHoldMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoHoldMusicTests.m; sourceTree = "<group>"; };
 		3433D7111CD31FBE0044EFA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		348E3ABF1CE2A0FD00522044 /* FloatBalloon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatBalloon.h; sourceTree = "<group>"; };
-		348E3AC01CE2A0FD00522044 /* FloatBalloon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatBalloon.m; sourceTree = "<group>"; };
+		348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMFloatBalloonImage.h; sourceTree = "<group>"; };
+		348E3AC01CE2A0FD00522044 /* NHMFloatBalloonImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMFloatBalloonImage.m; sourceTree = "<group>"; };
 		348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "noun_232963_cc-2.svg"; sourceTree = "<group>"; };
+		348E3AC51CE2AC5B00522044 /* NHMHelpWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindow.h; path = window/NHMHelpWindow.h; sourceTree = "<group>"; };
+		348E3AC61CE2AC5B00522044 /* NHMHelpWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindow.m; path = window/NHMHelpWindow.m; sourceTree = "<group>"; };
+		348E3AC71CE2AC5B00522044 /* NHMHelpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NHMHelpWindow.xib; path = window/NHMHelpWindow.xib; sourceTree = "<group>"; };
+		349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowProtocols.h; path = window/NHMHelpWindowProtocols.h; sourceTree = "<group>"; };
+		349D13C21CE38DAA0018D631 /* NHMHelpWindowToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowToolbar.h; path = window/NHMHelpWindowToolbar.h; sourceTree = "<group>"; };
+		349D13C31CE38DAA0018D631 /* NHMHelpWindowToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindowToolbar.m; path = window/NHMHelpWindowToolbar.m; sourceTree = "<group>"; };
+		349D13C61CE3D6980018D631 /* NSToolbar+NHMToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSToolbar+NHMToolbar.h"; path = "window/NSToolbar+NHMToolbar.h"; sourceTree = "<group>"; };
+		349D13C71CE3D6980018D631 /* NSToolbar+NHMToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSToolbar+NHMToolbar.m"; path = "window/NSToolbar+NHMToolbar.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +96,7 @@
 				348E3ABE1CE2A0FD00522044 /* FloatImage */,
 				3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */,
 				3433D7051CD31FBD0044EFA3 /* Info.plist */,
+				349D13C11CE38D680018D631 /* Help Window */,
 			);
 			path = NoHoldMusic;
 			sourceTree = "<group>";
@@ -96,12 +113,27 @@
 		348E3ABE1CE2A0FD00522044 /* FloatImage */ = {
 			isa = PBXGroup;
 			children = (
-				348E3ABF1CE2A0FD00522044 /* FloatBalloon.h */,
-				348E3AC01CE2A0FD00522044 /* FloatBalloon.m */,
+				348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */,
+				348E3AC01CE2A0FD00522044 /* NHMFloatBalloonImage.m */,
 				348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */,
 			);
 			name = FloatImage;
 			path = floatImage;
+			sourceTree = "<group>";
+		};
+		349D13C11CE38D680018D631 /* Help Window */ = {
+			isa = PBXGroup;
+			children = (
+				349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */,
+				348E3AC51CE2AC5B00522044 /* NHMHelpWindow.h */,
+				348E3AC61CE2AC5B00522044 /* NHMHelpWindow.m */,
+				348E3AC71CE2AC5B00522044 /* NHMHelpWindow.xib */,
+				349D13C21CE38DAA0018D631 /* NHMHelpWindowToolbar.h */,
+				349D13C31CE38DAA0018D631 /* NHMHelpWindowToolbar.m */,
+				349D13C61CE3D6980018D631 /* NSToolbar+NHMToolbar.h */,
+				349D13C71CE3D6980018D631 /* NSToolbar+NHMToolbar.m */,
+			);
+			name = "Help Window";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,7 +144,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3433D7041CD31FBD0044EFA3 /* NoHoldMusic.h in Headers */,
-				348E3AC21CE2A0FD00522044 /* FloatBalloon.h in Headers */,
+				348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */,
+				349D13C41CE38DAA0018D631 /* NHMHelpWindowToolbar.h in Headers */,
+				349D13C81CE3D6980018D631 /* NSToolbar+NHMToolbar.h in Headers */,
+				348E3AC81CE2AC5B00522044 /* NHMHelpWindow.h in Headers */,
+				349D13BC1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348E3ACA1CE2AC5B00522044 /* NHMHelpWindow.xib in Resources */,
 				348E3AC41CE2A0FD00522044 /* noun_232963_cc-2.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				348E3AC31CE2A0FD00522044 /* FloatBalloon.m in Sources */,
+				348E3AC91CE2AC5B00522044 /* NHMHelpWindow.m in Sources */,
+				349D13C51CE38DAA0018D631 /* NHMHelpWindowToolbar.m in Sources */,
+				349D13C91CE3D6980018D631 /* NSToolbar+NHMToolbar.m in Sources */,
+				348E3AC31CE2A0FD00522044 /* NHMFloatBalloonImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +366,7 @@
 		3433D7151CD31FBE0044EFA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -345,6 +386,7 @@
 		3433D7161CD31FBE0044EFA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
