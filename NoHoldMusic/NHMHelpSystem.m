@@ -10,7 +10,6 @@
 #import "NHMHelpWindow.h"
 
 @interface NHMHelpSystem ()
-
 @property NHMHelpWindow *helpWindow;
 @end
 
@@ -21,10 +20,10 @@
 {
     static dispatch_once_t pred;
     static NHMHelpSystem *helpSystem = nil;
-
     dispatch_once(&pred, ^{ helpSystem = [[self alloc] init]; });
     return helpSystem;
 }
+
 
 - (IBAction)showHelpWindow:(nullable id)sender {
     NHMHelpWindow *newWin = [[NHMHelpWindow alloc] init];

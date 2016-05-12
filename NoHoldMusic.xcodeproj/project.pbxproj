@@ -12,19 +12,23 @@
 		3433D7101CD31FBE0044EFA3 /* NoHoldMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3433D70F1CD31FBE0044EFA3 /* NoHoldMusicTests.m */; };
 		348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */; };
 		348E3AC31CE2A0FD00522044 /* NHMFloatBalloonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC01CE2A0FD00522044 /* NHMFloatBalloonImage.m */; };
-		348E3AC41CE2A0FD00522044 /* noun_232963_cc-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */; };
-		348E3AC81CE2AC5B00522044 /* NHMHelpWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3AC51CE2AC5B00522044 /* NHMHelpWindow.h */; };
+		348E3AC81CE2AC5B00522044 /* NHMHelpWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3AC51CE2AC5B00522044 /* NHMHelpWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		348E3AC91CE2AC5B00522044 /* NHMHelpWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC61CE2AC5B00522044 /* NHMHelpWindow.m */; };
 		348E3ACA1CE2AC5B00522044 /* NHMHelpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348E3AC71CE2AC5B00522044 /* NHMHelpWindow.xib */; };
-		349D13BC1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */; };
-		349D13C41CE38DAA0018D631 /* NHMHelpWindowToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13C21CE38DAA0018D631 /* NHMHelpWindowToolbar.h */; };
+		349D13BC1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		349D13C41CE38DAA0018D631 /* NHMHelpWindowToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13C21CE38DAA0018D631 /* NHMHelpWindowToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		349D13C51CE38DAA0018D631 /* NHMHelpWindowToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349D13C31CE38DAA0018D631 /* NHMHelpWindowToolbar.m */; };
 		349D13C81CE3D6980018D631 /* NSToolbar+NHMToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13C61CE3D6980018D631 /* NSToolbar+NHMToolbar.h */; };
 		349D13C91CE3D6980018D631 /* NSToolbar+NHMToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349D13C71CE3D6980018D631 /* NSToolbar+NHMToolbar.m */; };
 		34A9A7FE1CE3F0DD00460FE3 /* ToolbarClassExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A7FD1CE3F0DD00460FE3 /* ToolbarClassExtensionTests.m */; };
 		34A9A8051CE4295200460FE3 /* NHMHelpWindowToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A9A8041CE4295200460FE3 /* NHMHelpWindowToolbar.xib */; };
-		34A9A8081CE4477B00460FE3 /* NHMHelpSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A9A8061CE4477B00460FE3 /* NHMHelpSystem.h */; };
+		34A9A8081CE4477B00460FE3 /* NHMHelpSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A9A8061CE4477B00460FE3 /* NHMHelpSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A9A8091CE4477B00460FE3 /* NHMHelpSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A8071CE4477B00460FE3 /* NHMHelpSystem.m */; };
+		34A9A8121CE44DC400460FE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A8111CE44DC400460FE3 /* AppDelegate.m */; };
+		34A9A8151CE44DC500460FE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A8141CE44DC500460FE3 /* main.m */; };
+		34A9A8171CE44DC500460FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A9A8161CE44DC500460FE3 /* Assets.xcassets */; };
+		34A9A81A1CE44DC500460FE3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A9A8181CE44DC500460FE3 /* MainMenu.xib */; };
+		34A9A81F1CE44E5100460FE3 /* NoHoldMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3433D7001CD31FBD0044EFA3 /* NoHoldMusic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,13 @@
 		34A9A8041CE4295200460FE3 /* NHMHelpWindowToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NHMHelpWindowToolbar.xib; path = window/NHMHelpWindowToolbar.xib; sourceTree = "<group>"; };
 		34A9A8061CE4477B00460FE3 /* NHMHelpSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpSystem.h; sourceTree = "<group>"; };
 		34A9A8071CE4477B00460FE3 /* NHMHelpSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpSystem.m; sourceTree = "<group>"; };
+		34A9A80E1CE44DBE00460FE3 /* NoHoldMusicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoHoldMusicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A9A8101CE44DC400460FE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		34A9A8111CE44DC400460FE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		34A9A8141CE44DC500460FE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		34A9A8161CE44DC500460FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34A9A8191CE44DC500460FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		34A9A81B1CE44DC600460FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34A9A80B1CE44DBE00460FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A9A81F1CE44E5100460FE3 /* NoHoldMusic.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +104,7 @@
 			children = (
 				3433D7021CD31FBD0044EFA3 /* NoHoldMusic */,
 				3433D70E1CD31FBE0044EFA3 /* NoHoldMusicTests */,
+				34A9A80F1CE44DC400460FE3 /* NoHoldMusicDemo */,
 				3433D7011CD31FBD0044EFA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +114,7 @@
 			children = (
 				3433D7001CD31FBD0044EFA3 /* NoHoldMusic.framework */,
 				3433D70A1CD31FBE0044EFA3 /* NoHoldMusicTests.xctest */,
+				34A9A80E1CE44DBE00460FE3 /* NoHoldMusicDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +167,27 @@
 				349D13C71CE3D6980018D631 /* NSToolbar+NHMToolbar.m */,
 			);
 			name = "Help Window";
+			sourceTree = "<group>";
+		};
+		34A9A80F1CE44DC400460FE3 /* NoHoldMusicDemo */ = {
+			isa = PBXGroup;
+			children = (
+				34A9A8101CE44DC400460FE3 /* AppDelegate.h */,
+				34A9A8111CE44DC400460FE3 /* AppDelegate.m */,
+				34A9A8161CE44DC500460FE3 /* Assets.xcassets */,
+				34A9A8181CE44DC500460FE3 /* MainMenu.xib */,
+				34A9A81B1CE44DC600460FE3 /* Info.plist */,
+				34A9A8131CE44DC500460FE3 /* Supporting Files */,
+			);
+			path = NoHoldMusicDemo;
+			sourceTree = "<group>";
+		};
+		34A9A8131CE44DC500460FE3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				34A9A8141CE44DC500460FE3 /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +246,23 @@
 			productReference = 3433D70A1CD31FBE0044EFA3 /* NoHoldMusicTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		34A9A80D1CE44DBE00460FE3 /* NoHoldMusicDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A9A81C1CE44DC600460FE3 /* Build configuration list for PBXNativeTarget "NoHoldMusicDemo" */;
+			buildPhases = (
+				34A9A80A1CE44DBE00460FE3 /* Sources */,
+				34A9A80B1CE44DBE00460FE3 /* Frameworks */,
+				34A9A80C1CE44DBE00460FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoHoldMusicDemo;
+			productName = NoHoldMusicDemo;
+			productReference = 34A9A80E1CE44DBE00460FE3 /* NoHoldMusicDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +278,9 @@
 					3433D7091CD31FBE0044EFA3 = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					34A9A80D1CE44DBE00460FE3 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = 3433D6FA1CD31FBD0044EFA3 /* Build configuration list for PBXProject "NoHoldMusic" */;
@@ -227,6 +289,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 3433D6F61CD31FBC0044EFA3;
 			productRefGroup = 3433D7011CD31FBD0044EFA3 /* Products */;
@@ -235,6 +298,7 @@
 			targets = (
 				3433D6FF1CD31FBD0044EFA3 /* NoHoldMusic */,
 				3433D7091CD31FBE0044EFA3 /* NoHoldMusicTests */,
+				34A9A80D1CE44DBE00460FE3 /* NoHoldMusicDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -246,7 +310,6 @@
 			files = (
 				348E3ACA1CE2AC5B00522044 /* NHMHelpWindow.xib in Resources */,
 				34A9A8051CE4295200460FE3 /* NHMHelpWindowToolbar.xib in Resources */,
-				348E3AC41CE2A0FD00522044 /* noun_232963_cc-2.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +317,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A9A80C1CE44DBE00460FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A9A8171CE44DC500460FE3 /* Assets.xcassets in Resources */,
+				34A9A81A1CE44DC500460FE3 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +353,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34A9A80A1CE44DBE00460FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A9A8151CE44DC500460FE3 /* main.m in Sources */,
+				34A9A8121CE44DC400460FE3 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -290,6 +371,17 @@
 			targetProxy = 3433D70C1CD31FBE0044EFA3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		34A9A8181CE44DC500460FE3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34A9A8191CE44DC500460FE3 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3433D7121CD31FBE0044EFA3 /* Debug */ = {
@@ -330,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -371,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -382,6 +474,7 @@
 		3433D7151CD31FBE0044EFA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -392,7 +485,7 @@
 				INFOPLIST_FILE = NoHoldMusic/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fascinatinggroup.NoHoldMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -402,6 +495,7 @@
 		3433D7161CD31FBE0044EFA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -412,7 +506,7 @@
 				INFOPLIST_FILE = NoHoldMusic/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fascinatinggroup.NoHoldMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -437,6 +531,30 @@
 				INFOPLIST_FILE = NoHoldMusicTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fascinatinggroup.NoHoldMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		34A9A81D1CE44DC600460FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NoHoldMusicDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fascinatinggroup.NoHoldMusicDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		34A9A81E1CE44DC600460FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NoHoldMusicDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fascinatinggroup.NoHoldMusicDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -470,6 +588,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		34A9A81C1CE44DC600460FE3 /* Build configuration list for PBXNativeTarget "NoHoldMusicDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A9A81D1CE44DC600460FE3 /* Debug */,
+				34A9A81E1CE44DC600460FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -33,7 +33,8 @@ NSString* const kNHMToolbarItemIdentifierShare = @"share";
 
 + (nullable instancetype)helpWindowToolbar {
     NSArray *topLevelObjects = nil;
-    BOOL success = [[[NSNib alloc] initWithNibNamed:@"NHMHelpWindowToolbar" bundle:nil] instantiateWithOwner:self topLevelObjects:&topLevelObjects];
+    NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
+    BOOL success = [[[NSNib alloc] initWithNibNamed:@"NHMHelpWindowToolbar" bundle:classBundle] instantiateWithOwner:self topLevelObjects:&topLevelObjects];
     if (success) {
         for (id item in topLevelObjects) {
             if ([item isKindOfClass:[NSToolbar class]]) {
@@ -48,12 +49,9 @@ NSString* const kNHMToolbarItemIdentifierShare = @"share";
 }
 
 - (void)setUpHelpWindowToolbar {
-#if (__MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_10)
-    NSLog(@"We are bigger");
-    _navigationToolbarSegmentedControl.segmentStyle = NSSegmentStyleSeparated;
-#endif
-
+    [self switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOff];
 }
+
 - (void)showFloatToolbarItem:(BOOL)show {
     if (show && ![self nhm_isVisibleItemIdentifier:kNHMToolbarItemIdentifierFloat]) {
         [self insertItemWithItemIdentifier:kNHMToolbarItemIdentifierFloat atIndex:self.visibleItems.count];
@@ -96,7 +94,7 @@ NSString* const kNHMToolbarItemIdentifierShare = @"share";
     if (self.floatImageOff) {
         return self.floatImageOff;
     } else {
-        return [NHMFloatBalloonImage imageOfBalloonWithBalloonFillColor:[NSColor colorForControlTint:[NSColor currentControlTint]]];
+        return [NHMFloatBalloonImage imageOfBalloonWithBalloonFillColor:[NSColor clearColor]];
     }
 }
 

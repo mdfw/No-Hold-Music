@@ -44,13 +44,15 @@
 {
     NHMHelpWindowToolbar *helpToolbar = [NHMHelpWindowToolbar helpWindowToolbar];
     if (helpToolbar) {
-        helpToolbar.floatToolbarButton.action = @selector(setAllowFloatingWindow:);
+        self.toolbar = helpToolbar;
+        self.window.toolbar = helpToolbar;
+        helpToolbar.floatToolbarButton.action = @selector(floatButtonPressed:);
         helpToolbar.floatToolbarButton.target = self;
         helpToolbar.shareToolbarButton.target = self;
         helpToolbar.shareToolbarButton.action = @selector(showSharingPicker:);
         [helpToolbar.shareToolbarButton sendActionOn:NSLeftMouseDownMask];
-        helpToolbar.shareToolbarButton.enabled = NO;
-        self.toolbar = helpToolbar;
+        helpToolbar.shareToolbarButton.enabled = YES;
+        [self.toolbar switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOff];
     }
 }
 
