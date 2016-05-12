@@ -10,6 +10,7 @@
 #import "NHMHelpWindowToolbar.h"
 #import "NSToolbar+NHMToolbar.h"
 #import "NHMFloatBalloonImage.h"
+#import "AvailabilityMacros.h"
 
 NSString* const kNHMToolbarItemIdentifierFloat = @"float";
 NSString* const kNHMToolbarItemIdentifierSearch = @"search";
@@ -18,12 +19,34 @@ NSString* const kNHMToolbarItemIdentifierShare = @"share";
 @interface NHMHelpWindowToolbar ()
 @property NSImage *floatImageOn;
 @property NSImage *floatImageOff;
-@property (weak) IBOutlet NSButton *floatButton;
 
 @end
 
 @implementation NHMHelpWindowToolbar
 
++ (nullable instancetype)helpWindowToolbar {
+    NSArray *topLevelObjects = nil;
+    BOOL success = [[[NSNib alloc] initWithNibNamed:@"NHMHelpWindowToolbar" bundle:nil] instantiateWithOwner:self topLevelObjects:&topLevelObjects];
+    if (success) {
+        for (id item in topLevelObjects) {
+            if ([item isKindOfClass:[NSToolbar class]]) {
+                if ([item respondsToSelector:@selector(setUpHelpWindowToolbar)]) {
+                    [item setUpHelpWindowToolbar];
+                }
+                return item;
+            }
+        }
+    }
+    return nil;
+}
+
+- (void)setUpHelpWindowToolbar {
+#if (__MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_10)
+    NSLog(@"We are bigger");
+    _navigationToolbarSegmentedControl.segmentStyle = NSSegmentStyleSeparated;
+#endif
+
+}
 - (void)showFloatToolbarItem:(BOOL)show {
     if (show && ![self nhm_isVisibleItemIdentifier:kNHMToolbarItemIdentifierFloat]) {
         [self insertItemWithItemIdentifier:kNHMToolbarItemIdentifierFloat atIndex:self.visibleItems.count];
@@ -72,7 +95,7 @@ NSString* const kNHMToolbarItemIdentifierShare = @"share";
 
 - (void)switchFloatToolbarButtonImageToState:(NHMHelpWindowFloatState)state {
     if ([self nhm_isVisibleItemIdentifier:kNHMToolbarItemIdentifierFloat]) {
-            self.floatButton.image = [self floatToolbarButtonImageForState:state];
+            self.floatToolbarButton.image = [self floatToolbarButtonImageForState:state];
     }
 }
 

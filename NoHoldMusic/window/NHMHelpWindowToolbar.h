@@ -14,6 +14,35 @@ typedef NS_ENUM(NSInteger, NHMHelpWindowFloatState) {
 };
 
 @interface NHMHelpWindowToolbar : NSToolbar
+/**
+ *  The button that implements the share options.
+ */
+@property (weak, nullable) IBOutlet NSButton *shareToolbarButton;
+
+/**
+ *  The button that triggers float and unfloat of the window.
+ *  @warning Do not directly set the image here. Use the setFloatToolbarButtonImage... option.
+ */
+@property (weak, nullable) IBOutlet NSButton *floatToolbarButton;
+
+/**
+ *  The segmented control that indicates the back and forth navigation controls.
+ */
+@property (weak, nullable) IBOutlet NSSegmentedControl *navigationToolbarSegmentedControl;
+
+/**
+ *  The search field.
+ */
+@property (weak, nullable) IBOutlet NSSearchField *toolbarSearchField;
+
+/**
+ *  Returns a new copy of the HelpWindowToolbar.
+ *  @note This is preferable to alloc/init as this pulls the right set of 
+ *        toolbarItems from the nib.
+ *
+ *  @return HelpWindowToolbar
+ */
++ (nullable instancetype)helpWindowToolbar;
 
 /**
  *  Show the float toolbar button?

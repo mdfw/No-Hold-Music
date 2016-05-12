@@ -12,8 +12,15 @@
 @class NHMHelpWindowToolbar;
 
 @interface NHMHelpWindow : NSWindowController
-
+/**
+ *  Set to true to allow the window to float (and show the float window button)
+ *  @note To change the image of the button, see the HMHelpWindowToolbar class.
+ */
 @property (nonatomic) BOOL allowFloatingWindow;
+
+/**
+ *  The Toolbar that shows on the help window.
+ */
 @property (weak, nullable) IBOutlet NHMHelpWindowToolbar *toolbar;
 
 @end

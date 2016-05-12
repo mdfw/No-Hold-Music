@@ -28,7 +28,23 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    [self loadToolbar];
     [self setAllowFloatingWindow:YES];
+
+}
+
+- (void)loadToolbar;
+{
+    NHMHelpWindowToolbar *helpToolbar = [NHMHelpWindowToolbar helpWindowToolbar];
+    if (helpToolbar) {
+        helpToolbar.floatToolbarButton.action = @selector(setAllowFloatingWindow:);
+        helpToolbar.floatToolbarButton.target = self;
+        helpToolbar.shareToolbarButton.target = self;
+        helpToolbar.shareToolbarButton.action = @selector(showSharingPicker:);
+        [helpToolbar.shareToolbarButton sendActionOn:NSLeftMouseDownMask];
+        helpToolbar.shareToolbarButton.enabled = NO;
+        self.toolbar = helpToolbar;
+    }
 }
 
 - (void)setAllowFloatingWindow:(BOOL)allowFloatingWindow {
@@ -58,9 +74,10 @@
     }
 }
 
-
-- (IBAction)shareButtonPressed:(id)sender {
+- (IBAction)showSharingPicker:(id)sender {
+    NSArray * items = @[@"bob's your uncle", @"James"];
+    NSSharingServicePicker * picker = [[NSSharingServicePicker alloc] initWithItems:items];
+    [picker showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMinYEdge];
 }
-
 
 @end
