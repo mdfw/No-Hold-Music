@@ -11,6 +11,7 @@
 @interface NHMHelpSystem : NSObject
 
 + (nonnull id)sharedHelpSystem;
+
 /**
  *  Show the help window.
  *
