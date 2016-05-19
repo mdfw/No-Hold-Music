@@ -43,11 +43,6 @@
 @property (strong, nullable) IBOutlet NSButton *shareButton;
 
 /**
- *  A label, hidden by default to allow the title of the page to be displayed.
- */
-@property (strong, nullable) IBOutlet NSTextField *subTitleLabel;
-
-/**
  *  Search field.
  */
 @property (strong, nullable) IBOutlet NSSearchField *searchField;
