@@ -16,12 +16,7 @@
 		348E3AC91CE2AC5B00522044 /* NHMHelpWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC61CE2AC5B00522044 /* NHMHelpWindow.m */; };
 		348E3ACA1CE2AC5B00522044 /* NHMHelpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348E3AC71CE2AC5B00522044 /* NHMHelpWindow.xib */; };
 		349D13BC1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		349D13C41CE38DAA0018D631 /* NHMHelpWindowToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13C21CE38DAA0018D631 /* NHMHelpWindowToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		349D13C51CE38DAA0018D631 /* NHMHelpWindowToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349D13C31CE38DAA0018D631 /* NHMHelpWindowToolbar.m */; };
-		349D13C81CE3D6980018D631 /* NSToolbar+NHMToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13C61CE3D6980018D631 /* NSToolbar+NHMToolbar.h */; };
-		349D13C91CE3D6980018D631 /* NSToolbar+NHMToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349D13C71CE3D6980018D631 /* NSToolbar+NHMToolbar.m */; };
 		34A9A7FE1CE3F0DD00460FE3 /* ToolbarClassExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A7FD1CE3F0DD00460FE3 /* ToolbarClassExtensionTests.m */; };
-		34A9A8051CE4295200460FE3 /* NHMHelpWindowToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A9A8041CE4295200460FE3 /* NHMHelpWindowToolbar.xib */; };
 		34A9A8081CE4477B00460FE3 /* NHMHelpSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A9A8061CE4477B00460FE3 /* NHMHelpSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A9A8091CE4477B00460FE3 /* NHMHelpSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A8071CE4477B00460FE3 /* NHMHelpSystem.m */; };
 		34A9A8121CE44DC400460FE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A8111CE44DC400460FE3 /* AppDelegate.m */; };
@@ -29,6 +24,10 @@
 		34A9A8171CE44DC500460FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A9A8161CE44DC500460FE3 /* Assets.xcassets */; };
 		34A9A81A1CE44DC500460FE3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A9A8181CE44DC500460FE3 /* MainMenu.xib */; };
 		34A9A81F1CE44E5100460FE3 /* NoHoldMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3433D7001CD31FBD0044EFA3 /* NoHoldMusic.framework */; };
+		34A9A8231CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A9A8201CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.h */; };
+		34A9A8241CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A8211CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.m */; };
+		34A9A8251CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A9A8221CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.xib */; };
+		34B0D7C91CEE3A0800BFF57D /* NHMHelpWindowConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B0D7C81CEE3A0800BFF57D /* NHMHelpWindowConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +54,7 @@
 		348E3AC61CE2AC5B00522044 /* NHMHelpWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindow.m; path = window/NHMHelpWindow.m; sourceTree = "<group>"; };
 		348E3AC71CE2AC5B00522044 /* NHMHelpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NHMHelpWindow.xib; path = window/NHMHelpWindow.xib; sourceTree = "<group>"; };
 		349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowProtocols.h; path = window/NHMHelpWindowProtocols.h; sourceTree = "<group>"; };
-		349D13C21CE38DAA0018D631 /* NHMHelpWindowToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowToolbar.h; path = window/NHMHelpWindowToolbar.h; sourceTree = "<group>"; };
-		349D13C31CE38DAA0018D631 /* NHMHelpWindowToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindowToolbar.m; path = window/NHMHelpWindowToolbar.m; sourceTree = "<group>"; };
-		349D13C61CE3D6980018D631 /* NSToolbar+NHMToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSToolbar+NHMToolbar.h"; path = "window/NSToolbar+NHMToolbar.h"; sourceTree = "<group>"; };
-		349D13C71CE3D6980018D631 /* NSToolbar+NHMToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSToolbar+NHMToolbar.m"; path = "window/NSToolbar+NHMToolbar.m"; sourceTree = "<group>"; };
 		34A9A7FD1CE3F0DD00460FE3 /* ToolbarClassExtensionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarClassExtensionTests.m; sourceTree = "<group>"; };
-		34A9A8041CE4295200460FE3 /* NHMHelpWindowToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NHMHelpWindowToolbar.xib; path = window/NHMHelpWindowToolbar.xib; sourceTree = "<group>"; };
 		34A9A8061CE4477B00460FE3 /* NHMHelpSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpSystem.h; sourceTree = "<group>"; };
 		34A9A8071CE4477B00460FE3 /* NHMHelpSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpSystem.m; sourceTree = "<group>"; };
 		34A9A80E1CE44DBE00460FE3 /* NoHoldMusicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoHoldMusicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +64,11 @@
 		34A9A8161CE44DC500460FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34A9A8191CE44DC500460FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		34A9A81B1CE44DC600460FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34A9A8201CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowTaskbarViewController.h; path = window/NHMHelpWindowTaskbarViewController.h; sourceTree = "<group>"; };
+		34A9A8211CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindowTaskbarViewController.m; path = window/NHMHelpWindowTaskbarViewController.m; sourceTree = "<group>"; };
+		34A9A8221CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NHMHelpWindowTaskbarViewController.xib; path = window/NHMHelpWindowTaskbarViewController.xib; sourceTree = "<group>"; };
+		34B0D7C81CEE3A0800BFF57D /* NHMHelpWindowConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindowConstants.m; path = window/NHMHelpWindowConstants.m; sourceTree = "<group>"; };
+		34B0D7CA1CEE3A2700BFF57D /* NHMHelpWindowConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowConstants.h; path = window/NHMHelpWindowConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,15 +155,15 @@
 		349D13C11CE38D680018D631 /* Help Window */ = {
 			isa = PBXGroup;
 			children = (
+				34B0D7CA1CEE3A2700BFF57D /* NHMHelpWindowConstants.h */,
+				34B0D7C81CEE3A0800BFF57D /* NHMHelpWindowConstants.m */,
 				349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */,
 				348E3AC51CE2AC5B00522044 /* NHMHelpWindow.h */,
 				348E3AC61CE2AC5B00522044 /* NHMHelpWindow.m */,
 				348E3AC71CE2AC5B00522044 /* NHMHelpWindow.xib */,
-				349D13C21CE38DAA0018D631 /* NHMHelpWindowToolbar.h */,
-				349D13C31CE38DAA0018D631 /* NHMHelpWindowToolbar.m */,
-				34A9A8041CE4295200460FE3 /* NHMHelpWindowToolbar.xib */,
-				349D13C61CE3D6980018D631 /* NSToolbar+NHMToolbar.h */,
-				349D13C71CE3D6980018D631 /* NSToolbar+NHMToolbar.m */,
+				34A9A8201CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.h */,
+				34A9A8211CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.m */,
+				34A9A8221CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.xib */,
 			);
 			name = "Help Window";
 			sourceTree = "<group>";
@@ -199,9 +198,8 @@
 			files = (
 				3433D7041CD31FBD0044EFA3 /* NoHoldMusic.h in Headers */,
 				348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */,
-				349D13C41CE38DAA0018D631 /* NHMHelpWindowToolbar.h in Headers */,
 				34A9A8081CE4477B00460FE3 /* NHMHelpSystem.h in Headers */,
-				349D13C81CE3D6980018D631 /* NSToolbar+NHMToolbar.h in Headers */,
+				34A9A8231CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.h in Headers */,
 				348E3AC81CE2AC5B00522044 /* NHMHelpWindow.h in Headers */,
 				349D13BC1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h in Headers */,
 			);
@@ -308,8 +306,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A9A8251CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.xib in Resources */,
 				348E3ACA1CE2AC5B00522044 /* NHMHelpWindow.xib in Resources */,
-				34A9A8051CE4295200460FE3 /* NHMHelpWindowToolbar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,9 +335,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				348E3AC91CE2AC5B00522044 /* NHMHelpWindow.m in Sources */,
-				349D13C51CE38DAA0018D631 /* NHMHelpWindowToolbar.m in Sources */,
-				349D13C91CE3D6980018D631 /* NSToolbar+NHMToolbar.m in Sources */,
 				34A9A8091CE4477B00460FE3 /* NHMHelpSystem.m in Sources */,
+				34B0D7C91CEE3A0800BFF57D /* NHMHelpWindowConstants.m in Sources */,
+				34A9A8241CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.m in Sources */,
 				348E3AC31CE2A0FD00522044 /* NHMFloatBalloonImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +594,7 @@
 				34A9A81E1CE44DC600460FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

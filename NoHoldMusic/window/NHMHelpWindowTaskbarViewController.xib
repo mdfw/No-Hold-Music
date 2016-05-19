@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NHMHelpWindowTaskbarViewController">
+            <connections>
+                <outlet property="backButton" destination="Ayg-L7-hBm" id="e0D-B2-BtZ"/>
+                <outlet property="floatButton" destination="0GP-9W-5yr" id="TLd-wy-oeS"/>
+                <outlet property="forwardButton" destination="pnf-bo-DNB" id="uKh-7i-axt"/>
+                <outlet property="indexPopUpButton" destination="8S1-Nc-1F4" id="rtv-mc-8mD"/>
+                <outlet property="searchField" destination="e8p-H7-hwZ" id="ljs-91-CTF"/>
+                <outlet property="shareButton" destination="xBA-sW-MR0" id="wAx-eK-C3u"/>
+                <outlet property="subTitleLabel" destination="M2e-dJ-HEf" id="Vqa-3N-4OJ"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8S1-Nc-1F4" userLabel="Home button">
+                    <rect key="frame" x="17" y="2" width="55" height="27"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" preferredEdge="maxX" id="MoH-mK-Out">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="IIV-LH-mFN">
+                            <items>
+                                <menuItem state="on" image="NSPathTemplate" hidden="YES" id="5VL-Ns-gbd"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ayg-L7-hBm" userLabel="Back button">
+                    <rect key="frame" x="77" y="3" width="32" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="H8m-EV-8iZ"/>
+                        <constraint firstAttribute="height" constant="22" id="Lzi-Xh-nPU"/>
+                    </constraints>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qea-lA-u7n">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xBA-sW-MR0" userLabel="Share button">
+                    <rect key="frame" x="149" y="3" width="32" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="F75-TS-uQv"/>
+                        <constraint firstAttribute="height" constant="22" id="TYB-jb-fBA"/>
+                    </constraints>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fpv-d9-w8B">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e8p-H7-hwZ">
+                    <rect key="frame" x="339" y="5" width="96" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="96" id="pCR-0F-6MP"/>
+                    </constraints>
+                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="Tbx-ae-jDq">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </searchFieldCell>
+                </searchField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0GP-9W-5yr" userLabel="Float button">
+                    <rect key="frame" x="443" y="5" width="32" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="YCt-3Q-khW"/>
+                        <constraint firstAttribute="width" constant="32" id="an1-4R-el8"/>
+                    </constraints>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSEnterFullScreenTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="uBK-ei-Vgr">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-dJ-HEf">
+                    <rect key="frame" x="224" y="13" width="33" height="14"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Index" id="YBf-3s-M0p">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pnf-bo-DNB" userLabel="Forward button">
+                    <rect key="frame" x="109" y="3" width="32" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="GpS-Ay-JQW"/>
+                        <constraint firstAttribute="height" constant="22" id="Kac-e9-AZl"/>
+                    </constraints>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoRightTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQj-No-yTR">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="8S1-Nc-1F4" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="1wx-GI-6vT"/>
+                <constraint firstItem="0GP-9W-5yr" firstAttribute="leading" secondItem="e8p-H7-hwZ" secondAttribute="trailing" constant="8" id="2NM-Qg-E73"/>
+                <constraint firstItem="M2e-dJ-HEf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xBA-sW-MR0" secondAttribute="trailing" id="5Uf-1d-yat"/>
+                <constraint firstItem="Ayg-L7-hBm" firstAttribute="centerY" secondItem="8S1-Nc-1F4" secondAttribute="centerY" id="Fgj-nY-6Sg"/>
+                <constraint firstItem="8S1-Nc-1F4" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="Igp-ET-dfg"/>
+                <constraint firstItem="xBA-sW-MR0" firstAttribute="leading" secondItem="pnf-bo-DNB" secondAttribute="trailing" constant="8" symbolic="YES" id="Ker-Es-ZCH"/>
+                <constraint firstItem="M2e-dJ-HEf" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="NmR-yQ-Up8"/>
+                <constraint firstItem="0GP-9W-5yr" firstAttribute="centerY" secondItem="Ayg-L7-hBm" secondAttribute="centerY" id="Obq-fM-gh7"/>
+                <constraint firstItem="M2e-dJ-HEf" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="OgK-Ww-CyY"/>
+                <constraint firstItem="xBA-sW-MR0" firstAttribute="centerY" secondItem="Ayg-L7-hBm" secondAttribute="centerY" id="RZe-Sg-Hxu"/>
+                <constraint firstItem="pnf-bo-DNB" firstAttribute="centerY" secondItem="Ayg-L7-hBm" secondAttribute="centerY" id="SJc-Fr-WEW"/>
+                <constraint firstItem="e8p-H7-hwZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="M2e-dJ-HEf" secondAttribute="trailing" id="W8j-uY-YAv"/>
+                <constraint firstItem="Ayg-L7-hBm" firstAttribute="leading" secondItem="8S1-Nc-1F4" secondAttribute="trailing" constant="8" symbolic="YES" id="e9c-Je-EzZ"/>
+                <constraint firstItem="e8p-H7-hwZ" firstAttribute="centerY" secondItem="Ayg-L7-hBm" secondAttribute="centerY" id="kdZ-s5-4K2"/>
+                <constraint firstAttribute="trailing" secondItem="0GP-9W-5yr" secondAttribute="trailing" constant="5" id="m2l-ED-0PQ"/>
+                <constraint firstItem="pnf-bo-DNB" firstAttribute="leading" secondItem="Ayg-L7-hBm" secondAttribute="trailing" id="tCM-Pk-R3U"/>
+                <constraint firstAttribute="bottom" secondItem="Ayg-L7-hBm" secondAttribute="bottom" constant="5" id="xtI-U8-hsj"/>
+                <constraint firstAttribute="bottom" secondItem="8S1-Nc-1F4" secondAttribute="bottom" constant="5" id="yfg-ZN-NoR"/>
+            </constraints>
+            <point key="canvasLocation" x="110" y="206"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSEnterFullScreenTemplate" width="15" height="15"/>
+        <image name="NSGoLeftTemplate" width="9" height="12"/>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
+        <image name="NSPathTemplate" width="16" height="10"/>
+        <image name="NSShareTemplate" width="11" height="16"/>
+    </resources>
+</document>
