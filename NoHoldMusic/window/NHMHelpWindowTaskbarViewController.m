@@ -29,8 +29,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOff];
+    self.searchField.recentsAutosaveName = [self nameUnderWhichToSaveRecentSearches];
 }
 
+- (NSString *)nameUnderWhichToSaveRecentSearches {
+    NSString *appName = [[NSProcessInfo processInfo] processName];
+    if (appName && appName.length > 0) {
+        return [NSString stringWithFormat:@"NoHoldMusic.%@.helpSearch.recents", appName];
+    } else {
+        return @"NoHoldMusic.helpSearch.recents";
+    }
+}
 - (void)setFloatToolbarButtonImage:(NSImage *)image forState:(NHMHelpWindowFloatState)state {
     assert(state == NHMHelpWindowFloatStateOff || state == NHMHelpWindowFloatStateOn);
 

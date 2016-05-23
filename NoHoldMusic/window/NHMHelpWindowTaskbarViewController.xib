@@ -23,7 +23,7 @@
             <subviews>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8S1-Nc-1F4" userLabel="Home button">
                     <rect key="frame" x="5" y="2" width="55" height="27"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" preferredEdge="maxX" id="MoH-mK-Out">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" preferredEdge="maxX" id="MoH-mK-Out">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="IIV-LH-mFN">
@@ -39,7 +39,7 @@
                         <constraint firstAttribute="width" constant="32" id="H8m-EV-8iZ"/>
                         <constraint firstAttribute="height" constant="22" id="Lzi-Xh-nPU"/>
                     </constraints>
-                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qea-lA-u7n">
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qea-lA-u7n">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -56,15 +56,19 @@
                     </buttonCell>
                 </button>
                 <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e8p-H7-hwZ">
-                    <rect key="frame" x="339" y="5" width="96" height="22"/>
+                    <rect key="frame" x="285" y="5" width="150" height="22"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="96" id="pCR-0F-6MP"/>
+                        <constraint firstAttribute="width" priority="250" constant="150" id="pCR-0F-6MP"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="96" id="zbB-ZK-sqd"/>
                     </constraints>
                     <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="Tbx-ae-jDq">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </searchFieldCell>
+                    <connections>
+                        <outlet property="searchMenuTemplate" destination="v7F-g3-7gW" id="Qdo-O5-B0R"/>
+                    </connections>
                 </searchField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0GP-9W-5yr" userLabel="Float button">
                     <rect key="frame" x="443" y="5" width="32" height="22"/>
@@ -83,7 +87,7 @@
                         <constraint firstAttribute="width" constant="32" id="GpS-Ay-JQW"/>
                         <constraint firstAttribute="height" constant="22" id="Kac-e9-AZl"/>
                     </constraints>
-                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoRightTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQj-No-yTR">
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoRightTemplate" imagePosition="overlaps" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQj-No-yTR">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -108,6 +112,23 @@
             </constraints>
             <point key="canvasLocation" x="110" y="206"/>
         </customView>
+        <menu title="Searchy menu" id="v7F-g3-7gW">
+            <items>
+                <menuItem title="Recent searches" tag="1000" id="a38-OK-5Mj">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Recent searches" tag="1001" id="2yI-XE-451">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Clear recent searches" tag="1002" id="ku7-bc-Sm9">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="No recent searches" tag="1003" id="PBR-vS-hiw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="237" y="313.5"/>
+        </menu>
     </objects>
     <resources>
         <image name="NSEnterFullScreenTemplate" width="15" height="15"/>
