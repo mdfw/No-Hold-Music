@@ -8,19 +8,28 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NHMHelpWindowProtocols.h"
+#import "NHMHelpWindowTaskbarViewController.h"
 
-@class NHMHelpWindowToolbar;
+@class NHMHelpWindowToolbar, WKWebView;
 
 @interface NHMHelpWindow : NSWindowController
-/**
- *  Set to true to allow the window to float (and show the float window button)
- *  @note To change the image of the button, see the HMHelpWindowToolbar class.
- */
-@property (nonatomic) BOOL allowFloatingWindow;
 
 /**
- *  The Toolbar that shows on the help window.
+ *  Set to true to allow the window to float (and show the float window button)
+ *  @note To change the image of the button, see the NHMHelpWindowToolbar class.
  */
-@property (weak, nullable) IBOutlet NHMHelpWindowToolbar *toolbar;
+@property (nonatomic) BOOL floatable;
+
+/**
+ *  The Toolbar that shows on the help window. This is *not* a subclass of NSToolbar,
+ *  it's a subclass of NSView. For more information, see class header.
+ *  @note Even if this controller exists, it may not be showing. see showTaskbar.
+ */
+@property (readonly, strong, nonnull) NHMHelpWindowTaskbarViewController *taskbarController;
+
+/**
+ *  Show or hide the taskbar. Hiding the taskbar will not unload the taskbar.
+ */
+@property (nonatomic) BOOL showTaskbar;
 
 @end

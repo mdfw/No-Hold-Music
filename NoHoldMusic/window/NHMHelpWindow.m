@@ -15,13 +15,15 @@
 
 #import "NHMHelpWindow.h"
 #import "NHMHelpWindowProtocols.h"
-#import "NHMHelpWindowToolbar.h"
+@import WebKit;
 
 @interface NHMHelpWindow ()
-@property (weak) IBOutlet NSSegmentedControl *toolbarNavButtons;
-@property (weak) IBOutlet NSSearchField *toolbarSearchField;
-@property (weak) IBOutlet NSButton *toolbarShareButton;
 
+@property (strong, nonnull) NHMHelpWindowTaskbarViewController *taskbarController;
+
+@property (weak) IBOutlet NSView *myMainView;
+@property (weak) IBOutlet NSView *boxView;
+@property NSView *contentView;
 @end
 
 @implementation NHMHelpWindow
@@ -35,30 +37,108 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    [self loadToolbar];
-    [self setAllowFloatingWindow:YES];
+    self.showTaskbar = YES;
+    self.floatable = YES;
+    [self testWebsite];
+}
+
+
+// BEGIN TESTING
+- (void)testWebsite {
+    WKWebView *webview = [[WKWebView alloc] init];
+    self.contentView = webview;
+    [webview setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+    [self.myMainView addSubview: webview];
+    // align webview from the left and right
+    [self.myMainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[webview]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(webview)]];
+
+    // align webview from the top and bottom
+    [self.myMainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[webview]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(webview)]];
+
+    [webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://stackoverflow.com/questions/35418862/how-to-configure-a-wkwebview-to-fill-an-nswindow/35566479"]]];
+    //[webview loadHTMLString:@"<html><body bgcolor=red><p>Hello, World!</p></body></html>" baseURL: nil];
+    [webview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    [webview addObserver:self forKeyPath:@"canGoBack" options:NSKeyValueObservingOptionNew context:nil];
+    NSLog(@"Progress: %@", @(webview.estimatedProgress));
 
 }
 
-- (void)loadToolbar;
+- (void)testWebsite2 {
+    NSView *newView = [[NSView alloc] initWithFrame:self.myMainView.frame];
+    newView.wantsLayer = YES;
+    newView.layer.backgroundColor = [[NSColor redColor] CGColor];
+    [newView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.contentView = newView;
+    [self.myMainView addSubview:newView];
+    [self.myMainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[newView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(newView)]];
+
+     [self.myMainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[newView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(newView)]];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
 {
-    NHMHelpWindowToolbar *helpToolbar = [NHMHelpWindowToolbar helpWindowToolbar];
-    if (helpToolbar) {
-        self.toolbar = helpToolbar;
-        self.window.toolbar = helpToolbar;
-        helpToolbar.floatToolbarButton.action = @selector(floatButtonPressed:);
-        helpToolbar.floatToolbarButton.target = self;
-        helpToolbar.shareToolbarButton.target = self;
-        helpToolbar.shareToolbarButton.action = @selector(showSharingPicker:);
-        [helpToolbar.shareToolbarButton sendActionOn:NSLeftMouseDownMask];
-        helpToolbar.shareToolbarButton.enabled = YES;
-        [self.toolbar switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOff];
+    NSLog(@"ovserver");
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        NSLog(@"progress update: %@", @([(WKWebView*)self.contentView estimatedProgress]));
+        NSLog(@"Views: %@", self.myMainView.subviews);
+    } else if ([keyPath isEqualToString:@"canGoBack"]) {
+        NSLog(@"Can go back");
     }
 }
 
-- (void)setAllowFloatingWindow:(BOOL)allowFloatingWindow {
-    _allowFloatingWindow = allowFloatingWindow;
-    [self.toolbar showFloatToolbarItem:allowFloatingWindow];
+// END TESTING
+
+#pragma mark - taskbar
+/**
+ *  Load the taskbar and set sensible defaults. Does not add the taskbar to the window. 
+ */
+- (void)loadTaskbarController {
+    NHMHelpWindowTaskbarViewController *taskbarC = [[NHMHelpWindowTaskbarViewController alloc] init];
+    self.taskbarController = taskbarC;
+    taskbarC.layoutAttribute = NSLayoutAttributeBottom;
+    taskbarC.floatButton.target = self;
+    taskbarC.floatButton.action = @selector(floatButtonPressed:);
+    taskbarC.shareButton.target = self;
+    taskbarC.shareButton.action = @selector(showSharingPicker:);
+    [taskbarC.shareButton sendActionOn:NSLeftMouseDownMask];
+    taskbarC.shareButton.enabled = NO;
+    [taskbarC switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOff];
+}
+
+- (void)setShowTaskbar:(BOOL)showTaskbar {
+    if (!self.taskbarController) {
+        [self loadTaskbarController];
+    }
+    NSInteger taskBarIndex = [self taskbarControllerIndexInWindow];
+    if (showTaskbar) {
+        if (taskBarIndex == NSNotFound) {
+            [self.window addTitlebarAccessoryViewController:self.taskbarController];
+        }
+    } else {
+        if (taskBarIndex != NSNotFound) {
+            [self.window removeTitlebarAccessoryViewControllerAtIndex:taskBarIndex];
+        }
+    }
+}
+
+- (NSInteger)taskbarControllerIndexInWindow {
+    NSInteger index = 0;
+    for (NSTitlebarAccessoryViewController *accessoryC in self.window.titlebarAccessoryViewControllers) {
+        if ([accessoryC isEqual:self.taskbarController]) {
+            return index;
+        }
+        index = index + 1;
+    }
+    return NSNotFound;
+}
+
+- (void)setFloatable:(BOOL)allowFloatingWindow {
+    _floatable = allowFloatingWindow;
+    self.taskbarController.floatButton.hidden = !allowFloatingWindow;
 }
 
 - (IBAction)floatButtonPressed:(id)sender {
@@ -70,16 +150,14 @@
         self.window.level = NSFloatingWindowLevel;
         floatButtonOn = YES;
     }
-    if ([sender isKindOfClass:[NSButton class]]) {
-        [self floatButton:sender On:floatButtonOn];
-    }
+    [self floatButton:sender On:floatButtonOn];
 }
 
 - (void)floatButton:(NSButton*)button On:(BOOL)on {
     if (on) {
-        [self.toolbar switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOn];
+        [self.taskbarController switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOn];
     } else {
-        [self.toolbar switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOff];
+        [self.taskbarController switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOff];
     }
 }
 
