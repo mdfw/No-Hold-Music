@@ -26,4 +26,4 @@ FOUNDATION_EXPORT const unsigned char NoHoldMusicVersionString[];
 
 #import "NHMHelpSystem.h"
 #import "NHMHelpWindow.h"
-#import "NHMHelpWindowToolbar.h"
+#import "NHMHelpWindowTaskbarViewController.h"
