@@ -13,11 +13,11 @@
 //  either express or implied. See the License for the specific language governing permissions
 //  and limitations under the License.
 
-#import "NHMHelpWindow.h"
+#import "NHMHelpWindowController.h"
 #import "NHMHelpWindowProtocols.h"
 @import WebKit;
 
-@interface NHMHelpWindow ()
+@interface NHMHelpWindowController ()
 
 @property (strong, nonnull) NHMHelpWindowTaskbarViewController *taskbarController;
 
@@ -26,10 +26,10 @@
 @property NSView *contentView;
 @end
 
-@implementation NHMHelpWindow
+@implementation NHMHelpWindowController
 
 - (id)init {
-    self = [super initWithWindowNibName:@"NHMHelpWindow"];
+    self = [super initWithWindowNibName:@"NHMHelpWindowController"];
     if (self) {
     }
     return self;

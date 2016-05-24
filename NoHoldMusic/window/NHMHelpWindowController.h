@@ -10,9 +10,9 @@
 #import "NHMHelpWindowProtocols.h"
 #import "NHMHelpWindowTaskbarViewController.h"
 
-@class NHMHelpWindowToolbar, WKWebView;
+@class NHMHelpWindowToolbar;
 
-@interface NHMHelpWindow : NSWindowController
+@interface NHMHelpWindowController : NSWindowController
 
 /**
  *  Set to true to allow the window to float (and show the float window button)

@@ -15,10 +15,10 @@
 
 
 #import "NHMHelpSystem.h"
-#import "NHMHelpWindow.h"
+#import "NHMHelpWindowController.h"
 
 @interface NHMHelpSystem ()
-@property NHMHelpWindow *helpWindow;
+@property NHMHelpWindowController *helpWindow;
 @end
 
 
@@ -34,7 +34,7 @@
 
 
 - (IBAction)showHelpWindow:(nullable id)sender {
-    NHMHelpWindow *newWin = [[NHMHelpWindow alloc] init];
+    NHMHelpWindowController *newWin = [[NHMHelpWindowController alloc] init];
     if (newWin) {
         self.helpWindow = newWin;
         [newWin showWindow:sender];
