@@ -14,20 +14,20 @@
 //  and limitations under the License.
 
 
-#import "NHMHelpSystem.h"
+#import "NHMHelpManager.h"
 #import "NHMHelpWindowController.h"
 
-@interface NHMHelpSystem ()
+@interface NHMHelpManager ()
 @property NHMHelpWindowController *helpWindow;
 @end
 
 
-@implementation NHMHelpSystem
+@implementation NHMHelpManager
 
 + (id)sharedHelpSystem
 {
     static dispatch_once_t pred;
-    static NHMHelpSystem *helpSystem = nil;
+    static NHMHelpManager *helpSystem = nil;
     dispatch_once(&pred, ^{ helpSystem = [[self alloc] init]; });
     return helpSystem;
 }

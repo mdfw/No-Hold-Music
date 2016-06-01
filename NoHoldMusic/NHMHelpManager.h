@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NHMHelpSystem : NSObject
+@interface NHMHelpManager : NSObject
 
 + (nonnull id)sharedHelpSystem;
 

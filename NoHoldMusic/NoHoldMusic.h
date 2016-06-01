@@ -24,6 +24,6 @@ FOUNDATION_EXPORT const unsigned char NoHoldMusicVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <NoHoldMusic/PublicHeader.h>
 
 
-#import "NHMHelpSystem.h"
+#import "NHMHelpManager.h"
 #import "NHMHelpWindowController.h"
 #import "NHMHelpWindowTaskbarViewController.h"

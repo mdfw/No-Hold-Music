@@ -12,7 +12,7 @@
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
-@property (weak) NHMHelpSystem *helpSystem;
+@property (weak) NHMHelpManager *helpSystem;
 @end
 
 @implementation AppDelegate
@@ -37,6 +37,6 @@
     if (self.helpSystem) {
         return;
     }
-    self.helpSystem = [NHMHelpSystem sharedHelpSystem];
+    self.helpSystem = [NHMHelpManager sharedHelpSystem];
 }
 @end
