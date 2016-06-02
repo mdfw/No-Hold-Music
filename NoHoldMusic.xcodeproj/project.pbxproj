@@ -11,12 +11,13 @@
 		3433D7041CD31FBD0044EFA3 /* NoHoldMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3433D70B1CD31FBE0044EFA3 /* NoHoldMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3433D7001CD31FBD0044EFA3 /* NoHoldMusic.framework */; };
 		3433D7101CD31FBE0044EFA3 /* NoHoldMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3433D70F1CD31FBE0044EFA3 /* NoHoldMusicTests.m */; };
+		345498301CFFEB1B00B209E9 /* NHMHelpBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */; };
+		345498311CFFEB1B00B209E9 /* NHMHelpBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */; };
 		348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */; };
 		348E3AC31CE2A0FD00522044 /* NHMFloatBalloonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC01CE2A0FD00522044 /* NHMFloatBalloonImage.m */; };
 		348E3AC81CE2AC5B00522044 /* NHMHelpWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3AC51CE2AC5B00522044 /* NHMHelpWindowController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		348E3AC91CE2AC5B00522044 /* NHMHelpWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E3AC61CE2AC5B00522044 /* NHMHelpWindowController.m */; };
 		348E3ACA1CE2AC5B00522044 /* NHMHelpWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348E3AC71CE2AC5B00522044 /* NHMHelpWindowController.xib */; };
-		349D13BC1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A9A7FE1CE3F0DD00460FE3 /* ToolbarClassExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A7FD1CE3F0DD00460FE3 /* ToolbarClassExtensionTests.m */; };
 		34A9A8081CE4477B00460FE3 /* NHMHelpManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A9A8061CE4477B00460FE3 /* NHMHelpManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A9A8091CE4477B00460FE3 /* NHMHelpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9A8071CE4477B00460FE3 /* NHMHelpManager.m */; };
@@ -50,13 +51,14 @@
 		3433D70A1CD31FBE0044EFA3 /* NoHoldMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoHoldMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3433D70F1CD31FBE0044EFA3 /* NoHoldMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoHoldMusicTests.m; sourceTree = "<group>"; };
 		3433D7111CD31FBE0044EFA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpBook.h; sourceTree = "<group>"; };
+		3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpBook.m; sourceTree = "<group>"; };
 		348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMFloatBalloonImage.h; sourceTree = "<group>"; };
 		348E3AC01CE2A0FD00522044 /* NHMFloatBalloonImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMFloatBalloonImage.m; sourceTree = "<group>"; };
 		348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "noun_232963_cc-2.svg"; sourceTree = "<group>"; };
 		348E3AC51CE2AC5B00522044 /* NHMHelpWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowController.h; path = window/NHMHelpWindowController.h; sourceTree = "<group>"; };
 		348E3AC61CE2AC5B00522044 /* NHMHelpWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindowController.m; path = window/NHMHelpWindowController.m; sourceTree = "<group>"; };
 		348E3AC71CE2AC5B00522044 /* NHMHelpWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NHMHelpWindowController.xib; path = window/NHMHelpWindowController.xib; sourceTree = "<group>"; };
-		349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowProtocols.h; path = window/NHMHelpWindowProtocols.h; sourceTree = "<group>"; };
 		34A9A7FD1CE3F0DD00460FE3 /* ToolbarClassExtensionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarClassExtensionTests.m; sourceTree = "<group>"; };
 		34A9A8061CE4477B00460FE3 /* NHMHelpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpManager.h; sourceTree = "<group>"; };
 		34A9A8071CE4477B00460FE3 /* NHMHelpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpManager.m; sourceTree = "<group>"; };
@@ -128,6 +130,8 @@
 				3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */,
 				34A9A8061CE4477B00460FE3 /* NHMHelpManager.h */,
 				34A9A8071CE4477B00460FE3 /* NHMHelpManager.m */,
+				3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */,
+				3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */,
 				3433D7051CD31FBD0044EFA3 /* Info.plist */,
 				349D13C11CE38D680018D631 /* Help Window */,
 			);
@@ -161,7 +165,6 @@
 			children = (
 				34B0D7CA1CEE3A2700BFF57D /* NHMHelpWindowConstants.h */,
 				34B0D7C81CEE3A0800BFF57D /* NHMHelpWindowConstants.m */,
-				349D13BB1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h */,
 				348E3AC51CE2AC5B00522044 /* NHMHelpWindowController.h */,
 				348E3AC61CE2AC5B00522044 /* NHMHelpWindowController.m */,
 				348E3AC71CE2AC5B00522044 /* NHMHelpWindowController.xib */,
@@ -202,11 +205,11 @@
 			files = (
 				3433D7041CD31FBD0044EFA3 /* NoHoldMusic.h in Headers */,
 				34B0D7CB1CEE6A3F00BFF57D /* NHMHelpWindowConstants.h in Headers */,
+				345498301CFFEB1B00B209E9 /* NHMHelpBook.h in Headers */,
 				348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */,
 				34A9A8081CE4477B00460FE3 /* NHMHelpManager.h in Headers */,
 				34A9A8231CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.h in Headers */,
 				348E3AC81CE2AC5B00522044 /* NHMHelpWindowController.h in Headers */,
-				349D13BC1CE2BD1C0018D631 /* NHMHelpWindowProtocols.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +347,7 @@
 				34B0D7C91CEE3A0800BFF57D /* NHMHelpWindowConstants.m in Sources */,
 				34A9A8241CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.m in Sources */,
 				348E3AC31CE2A0FD00522044 /* NHMFloatBalloonImage.m in Sources */,
+				345498311CFFEB1B00B209E9 /* NHMHelpBook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -493,6 +498,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.fascinatinggroup.NoHoldMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -500,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
