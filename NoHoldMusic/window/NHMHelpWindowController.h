@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "NHMHelpWindowProtocols.h"
 #import "NHMHelpWindowTaskbarViewController.h"
 
 @class NHMHelpWindowToolbar;

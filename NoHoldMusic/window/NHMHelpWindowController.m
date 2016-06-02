@@ -14,16 +14,11 @@
 //  and limitations under the License.
 
 #import "NHMHelpWindowController.h"
-#import "NHMHelpWindowProtocols.h"
 @import WebKit;
 
 @interface NHMHelpWindowController ()
 
 @property (strong, nonnull) NHMHelpWindowTaskbarViewController *taskbarController;
-
-@property (weak) IBOutlet NSView *myMainView;
-@property (weak) IBOutlet NSView *boxView;
-@property NSView *contentView;
 @end
 
 @implementation NHMHelpWindowController
