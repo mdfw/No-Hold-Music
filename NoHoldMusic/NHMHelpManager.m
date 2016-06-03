@@ -18,25 +18,27 @@
 #import "NHMHelpWindowController.h"
 
 @interface NHMHelpManager ()
-@property NHMHelpWindowController *helpWindow;
 @end
 
 
 @implementation NHMHelpManager
 
-+ (id)sharedHelpSystem
++ (id)sharedHelpManager
 {
     static dispatch_once_t pred;
-    static NHMHelpManager *helpSystem = nil;
-    dispatch_once(&pred, ^{ helpSystem = [[self alloc] init]; });
-    return helpSystem;
+    static NHMHelpManager *helpManager = nil;
+    dispatch_once(&pred, ^{ helpManager = [[self alloc] init]; });
+    return helpManager;
 }
 
+@end
+
+@implementation NSApplication(NHMHelpExtension)
 
 - (IBAction)showHelpWindow:(nullable id)sender {
     NHMHelpWindowController *newWin = [[NHMHelpWindowController alloc] init];
     if (newWin) {
-        self.helpWindow = newWin;
+        NHMHelpManager.sharedHelpManager.helpWindow = newWin;
         [newWin showWindow:sender];
     }
 }
