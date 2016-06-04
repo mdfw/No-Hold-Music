@@ -6,6 +6,8 @@
 //  Copyright © 2016 The Fascinating Group. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef NoHoldMusic_Constant_h
+#define NoHoldMusic_Constant_h
 
 FOUNDATION_EXPORT NSString *const kNHMLocalizedStringsTableName;
+#endif

@@ -6,6 +6,6 @@
 //  Copyright © 2016 The Fascinating Group. All rights reserved.
 //
 
-#import "NoHoldMusicConstants.h"
+#import <Foundation/Foundation.h>
 
 NSString *const kNHMLocalizedStringsTableName = @"NoHoldMusicStrings";
