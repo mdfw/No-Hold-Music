@@ -13,7 +13,7 @@
 
 @interface NHMHelpManager : NSObject
 
-@property NHMHelpWindowController *helpWindow;
+@property (nullable) NHMHelpWindowController *helpWindow;
 
 + (nonnull instancetype)sharedHelpManager;
 
