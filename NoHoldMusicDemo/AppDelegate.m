@@ -12,15 +12,14 @@
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
-@property (weak) NHMHelpManager *helpSystem;
+@property (weak) NHMHelpManager *helpManager;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    [self loadHelpSystem];
-    [self.helpSystem showHelpWindow:nil];
+    [self showNHMHelp:nil];
 
 }
 
@@ -28,15 +27,15 @@
     // Insert code here to tear down your application
 }
 
-- (IBAction)showHelpWindow:(id)sender {
+- (IBAction)showNHMHelp:(id)sender {
     [self loadHelpSystem];
-    [self.helpSystem showHelpWindow:sender];
+    [[NSApplication sharedApplication] showHelpWindow:sender];
 }
 
 - (void)loadHelpSystem {
-    if (self.helpSystem) {
+    if (self.helpManager) {
         return;
     }
-    self.helpSystem = [NHMHelpManager sharedHelpSystem];
+    self.helpManager = [NHMHelpManager sharedHelpManager];
 }
 @end

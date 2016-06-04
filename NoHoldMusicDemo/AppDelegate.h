@@ -10,7 +10,7 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-- (IBAction)showHelpWindow:(id)sender;
+- (IBAction)showNHMHelp:(id)sender;
 
 @end
 
