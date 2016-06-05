@@ -179,6 +179,9 @@
     if ([key isEqualToString:kNHMHelpBookTitlePlistKey]) {
         return NSStringFromSelector(@selector(bookTitle));
     }
+    if ([key isEqualToString:kNHMHelpBookLanguagePlistKey]) {
+        return NSStringFromSelector(@selector(language));
+    }
     if ([key isEqualToString:kNHMHelpBookIndexFilePathPlistKey]) {
         return NSStringFromSelector(@selector(indexFilePath));
     }
@@ -234,10 +237,11 @@
 }
 
 NSString *const kNHMHelpBookTitlePlistKey = @"HPDBookTitle";
+NSString *const kNHMHelpBookLanguagePlistKey = @"HPDBookLanguage";
 NSString *const kNHMHelpBookIndexFilePathPlistKey = @"HPDBookAccessPath";
 NSString *const kNHMHelpBookSearchIndexFilePathPlistKey = @"NHMBookSearchIndexFilePath";
-NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey = @"NHMBookAnchorPlistFilePath";
-NSString *const kNHMHelpBookContentsPlistFilePathPlistKey = @"NHMBookContentPlistFilePath";
+NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey = @"NHMBookAnchorsPlistFilePath";
+NSString *const kNHMHelpBookContentsPlistFilePathPlistKey = @"NHMBookContentsPlistFilePath";
 
 NSString *const kNHMHelpBookErrorDomain = @"NHMHelpBookError";
 

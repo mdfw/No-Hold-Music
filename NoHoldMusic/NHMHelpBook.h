@@ -17,6 +17,11 @@
 @property (nullable) NSString *bookTitle;
 
 /**
+ *  Optional language.
+ */
+@property (nullable) NSString *language;
+
+/**
  *  The path of the book directory.
  */
 @property (nullable) NSString *bookDirectoryPath;
@@ -108,11 +113,13 @@
 #pragma mark - info.plist keys
 
 NS_ASSUME_NONNULL_BEGIN
-FOUNDATION_EXPORT NSString *const kNHMHelpBookTitlePlistKey;
-FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexFilePathPlistKey;
-FOUNDATION_EXPORT NSString *const kNHMHelpBookSearchIndexFilePathPlistKey;
-FOUNDATION_EXPORT NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey;
-FOUNDATION_EXPORT NSString *const kNHMHelpBookContentsPlistFilePathPlistKey;
+
+FOUNDATION_EXPORT NSString *const kNHMHelpBookTitlePlistKey; // HPDBookTitle
+FOUNDATION_EXPORT NSString *const kNHMHelpBookLanguagePlistKey; // HPDBookLanguage
+FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexFilePathPlistKey; // HPDBookAccessPath
+FOUNDATION_EXPORT NSString *const kNHMHelpBookSearchIndexFilePathPlistKey; // NHMBookSearchIndexFilePath
+FOUNDATION_EXPORT NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey; // NHMBookAnchorsPlistFilePath
+FOUNDATION_EXPORT NSString *const kNHMHelpBookContentsPlistFilePathPlistKey; // NHMBookContentsPlistFilePath
 
 
 #pragma mark - error codes
