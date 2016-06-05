@@ -17,6 +17,10 @@
 		34510AAE1D028AB0008FCD4A /* ReleaseWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 34510AAC1D028AB0008FCD4A /* ReleaseWarnings.xcconfig */; };
 		34510AB11D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AAF1D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h */; };
 		34510AB21D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AB01D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.m */; };
+		34510AB51D03F1F7008FCD4A /* NHMHelpContentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AB31D03F1F7008FCD4A /* NHMHelpContentController.h */; };
+		34510AB61D03F1F7008FCD4A /* NHMHelpContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AB41D03F1F7008FCD4A /* NHMHelpContentController.m */; };
+		34510AB91D03F224008FCD4A /* NHMHelpSearchController.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AB71D03F224008FCD4A /* NHMHelpSearchController.h */; };
+		34510ABA1D03F224008FCD4A /* NHMHelpSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AB81D03F224008FCD4A /* NHMHelpSearchController.m */; };
 		345498301CFFEB1B00B209E9 /* NHMHelpBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345498311CFFEB1B00B209E9 /* NHMHelpBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */; };
 		348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */; };
@@ -63,6 +67,10 @@
 		34510AAC1D028AB0008FCD4A /* ReleaseWarnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseWarnings.xcconfig; sourceTree = "<group>"; };
 		34510AAF1D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+NHMHelpExtension.h"; sourceTree = "<group>"; };
 		34510AB01D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+NHMHelpExtension.m"; sourceTree = "<group>"; };
+		34510AB31D03F1F7008FCD4A /* NHMHelpContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpContentController.h; sourceTree = "<group>"; };
+		34510AB41D03F1F7008FCD4A /* NHMHelpContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpContentController.m; sourceTree = "<group>"; };
+		34510AB71D03F224008FCD4A /* NHMHelpSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpSearchController.h; sourceTree = "<group>"; };
+		34510AB81D03F224008FCD4A /* NHMHelpSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpSearchController.m; sourceTree = "<group>"; };
 		3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpBook.h; sourceTree = "<group>"; };
 		3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpBook.m; sourceTree = "<group>"; };
 		348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMFloatBalloonImage.h; sourceTree = "<group>"; };
@@ -150,6 +158,10 @@
 				34510AB01D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.m */,
 				3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */,
 				3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */,
+				34510AB31D03F1F7008FCD4A /* NHMHelpContentController.h */,
+				34510AB41D03F1F7008FCD4A /* NHMHelpContentController.m */,
+				34510AB71D03F224008FCD4A /* NHMHelpSearchController.h */,
+				34510AB81D03F224008FCD4A /* NHMHelpSearchController.m */,
 				3433D7051CD31FBD0044EFA3 /* Info.plist */,
 				349D13C11CE38D680018D631 /* Help Window */,
 			);
@@ -224,10 +236,12 @@
 				3433D7041CD31FBD0044EFA3 /* NoHoldMusic.h in Headers */,
 				34B0D7CB1CEE6A3F00BFF57D /* NHMHelpWindowConstants.h in Headers */,
 				345498301CFFEB1B00B209E9 /* NHMHelpBook.h in Headers */,
+				34510AB91D03F224008FCD4A /* NHMHelpSearchController.h in Headers */,
 				348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */,
 				34510AB11D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h in Headers */,
 				34A9A8081CE4477B00460FE3 /* NHMHelpManager.h in Headers */,
 				34A9A8231CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.h in Headers */,
+				34510AB51D03F1F7008FCD4A /* NHMHelpContentController.h in Headers */,
 				34510AA91D00FE05008FCD4A /* NoHoldMusicConstants.h in Headers */,
 				348E3AC81CE2AC5B00522044 /* NHMHelpWindowController.h in Headers */,
 			);
@@ -364,7 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34510ABA1D03F224008FCD4A /* NHMHelpSearchController.m in Sources */,
 				34510AB21D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.m in Sources */,
+				34510AB61D03F1F7008FCD4A /* NHMHelpContentController.m in Sources */,
 				348E3AC91CE2AC5B00522044 /* NHMHelpWindowController.m in Sources */,
 				34A9A8091CE4477B00460FE3 /* NHMHelpManager.m in Sources */,
 				34B0D7C91CEE3A0800BFF57D /* NHMHelpWindowConstants.m in Sources */,

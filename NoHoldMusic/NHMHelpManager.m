@@ -18,6 +18,9 @@
 #import "NHMHelpWindowController.h"
 
 @interface NHMHelpManager ()
+
+@property NSMutableArray *helpBooks;
+
 @end
 
 
@@ -31,4 +34,11 @@
     return helpManager;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _helpBooks = [NSMutableArray array];
+    }
+    return self;
+}
 @end
