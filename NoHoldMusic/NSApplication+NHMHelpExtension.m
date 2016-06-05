@@ -1,8 +1,8 @@
 //
-//  NHMHelpSystem.m
+//  NSApplication+NHMHelpExtension.m
 //  NoHoldMusic
 //
-//  Created by Mark D. Freeman Williams on 5/11/16.
+//  Created by Mark D. Freeman Williams on 6/4/16.
 //  Copyright © 2016 The Fascinating Group. All rights reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
@@ -12,23 +12,20 @@
 //  License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 //  either express or implied. See the License for the specific language governing permissions
 //  and limitations under the License.
+//
 
-
+#import "NSApplication+NHMHelpExtension.h"
+#import "NHMHelpWindowcontroller.h"
 #import "NHMHelpManager.h"
-#import "NHMHelpWindowController.h"
 
-@interface NHMHelpManager ()
-@end
+@implementation NSApplication (NHMHelpExtension)
 
-
-@implementation NHMHelpManager
-
-+ (id)sharedHelpManager
-{
-    static dispatch_once_t pred;
-    static NHMHelpManager *helpManager = nil;
-    dispatch_once(&pred, ^{ helpManager = [[self alloc] init]; });
-    return helpManager;
+- (IBAction)nhm_showHelp:(nullable id)sender {
+    NHMHelpWindowController *newWin = [[NHMHelpWindowController alloc] init];
+    if (newWin) {
+        NHMHelpManager.sharedHelpManager.helpWindow = newWin;
+        [newWin showWindow:sender];
+    }
 }
 
 @end
