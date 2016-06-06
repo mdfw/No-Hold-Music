@@ -17,7 +17,7 @@
 @property (nullable) NSString *bookTitle;
 
 /**
- *  Optional language.
+ *  The language of the book.
  */
 @property (nullable) NSString *language;
 
@@ -44,7 +44,7 @@
 
 /**
  *  A set of anchors. 
- *  @note While this is technically not necessary, HelpManager will look in this Dictionary for the anchor list and thus 'openAnchor' calls will fail.
+ *  @note While this is technically not necessary, HelpContentController will look in this Dictionary for the anchor list and thus 'openAnchor' calls will fail.
  */
 @property (nullable) NSDictionary<NSString*, NSString*> *anchors;
 
@@ -63,6 +63,12 @@
 @property (nullable) NSDictionary<NSString*, NSString*> *contentsList;
 
 /**
+ *  The version of the book.
+ */
+@property (nullable) NSString *bookVersion;
+
+#pragma mark - class methods
+/**
  *  Searches bundle for all help books.
  *
  *  @param bundle    The bundle to search. Defaults to main bundle.
@@ -73,29 +79,44 @@
  */
 + (nullable NSArray <NHMHelpBook *>*)allBooksInBundle:(nullable NSBundle *)bundle helpDirPath:(nullable NSString *)dirPath bookFileExtension:(nullable NSString*)extension;
 
+#pragma mark - init
 /**
- *  Creates a Help book by looking in the path for an info.plist containing the keys below. 
- *  Then calls designated initalizer if the NHMHelpBookIndexFilePathPlistKey key is found.
+ *  Creates a Help book by looking in the path for an info.plist and calling initWithHelpBookInfoPathURL…
  *
  *  @param bookDirPathURL The directory path url for this book.
  *  @param error  error if nil.
  *
- *  @return An instance of NHMHelpBook or nil on error (typically, the file isn't found).
- *  @note Called designated initializer and then sets all related properties.
+ *  @return An instance of NHMHelpBook or nil on error.
+ *  @see initWithHepBookInfoPathURL:bookDirPathURL:error;
  */
 - (nullable instancetype)initWithBookDirPathURL:(nonnull NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error;
 
 /**
- *  Creates a help book with the minimum required syntax.
+ *  Creates a Help Book by parsing the info.plist passed in. Creates with initWithIndexPathURL then fills in properties from the plist.
+ *  @see "NHMHelpBook info.plist keys"
+ *
+ *  @param infoPathURL The path to the info.plist.
+ *  @param bookDirPathURL The path to the Book directory. If empty, the parent path to the info.plist will be used.
+ *  @param error        Error.
+ *
+ *  @return An instance of NHMHelpBook or nil on error.
+ */
+- (nullable instancetype)initWithHelpBookInfoPathURL:(nonnull NSURL *)infoPathURL bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error;
+
+/**
+ *  Creates a help book with the minimum required syntax. 
+ *  @note Designated initializer.
  *
  *  @param indexPathURL Path of the index file.
+ *  @param bookDirPathURL The path to the Book directory. If empty, item is ignored.
  *  @param error        Error if nill
  *
  *  @return An instance of NHMHelpBook or nil on error (typically, the file isn't found).
- *  @warning This does not load any other files - it is your responsibility to set all properties.
+ *  @warning This does not load any other files - it is the responsibility of the caller to set all properties besides indexPathURL and bookDirPathURL properties.
  */
-- (nullable instancetype)initWithIndexPathURL:(nonnull NSURL *)indexPathURL error:(NSError * _Nullable * _Nullable)error NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithIndexPathURL:(nonnull NSURL *)indexPathURL  bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error;
 
+#pragma mark - loaders
 /**
  *  Loads the anchors from the plist and sets them to the anchors property.
  *  Called automatically from initWithBookDirPathURL.
@@ -110,16 +131,17 @@
 
 @end
 
-#pragma mark - info.plist keys
+#pragma mark - NHMHelpBook info.plist keys
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT NSString *const kNHMHelpBookTitlePlistKey; // HPDBookTitle
-FOUNDATION_EXPORT NSString *const kNHMHelpBookLanguagePlistKey; // HPDBookLanguage
-FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexFilePathPlistKey; // HPDBookAccessPath
+FOUNDATION_EXPORT NSString *const kNHMHelpBookTitlePlistKey; // NHMBookTitle
+FOUNDATION_EXPORT NSString *const kNHMHelpBookLanguagePlistKey; // NHMBookLanguage
+FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexFilePathPlistKey; // NHMBookIndexFilePath
 FOUNDATION_EXPORT NSString *const kNHMHelpBookSearchIndexFilePathPlistKey; // NHMBookSearchIndexFilePath
 FOUNDATION_EXPORT NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey; // NHMBookAnchorsPlistFilePath
 FOUNDATION_EXPORT NSString *const kNHMHelpBookContentsPlistFilePathPlistKey; // NHMBookContentsPlistFilePath
+FOUNDATION_EXPORT NSString *const kNHMHelpBookVersionKey; // NHMBookVersion
 
 
 #pragma mark - error codes

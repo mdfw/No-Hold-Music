@@ -49,21 +49,36 @@
 }
 
 - (nullable instancetype)init {
-    NSAssert(NO, @"NHMHelpBook cannot be initialized with -init");
-    self = [self initWithIndexPathURL:[NSURL URLWithString:@"none"] error:nil];
+    NSAssert(NO, @"NHMHelpBook cannot be initialized with -init. Use initWithIndexPathURL");
     return nil;
 }
 
 - (nullable instancetype)initWithBookDirPathURL:(NSURL *)bookDirPathURL error:(NSError **)error {
+    return [self initWithBookDirPathURL:bookDirPathURL fileManager:[NSFileManager defaultManager] error:error];
+}
+
+- (nullable instancetype)initWithBookDirPathURL:(NSURL *)bookDirPathURL fileManager:(NSFileManager *)fileManager error:(NSError **)error {
     NSParameterAssert(bookDirPathURL);
-    if (![[NSFileManager defaultManager] fileExistsAtPath:bookDirPathURL.path]) {
+    BOOL isDir;
+    if (![fileManager fileExistsAtPath:bookDirPathURL.path isDirectory:&isDir] || !isDir) {
         if (error) {
             *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorBookDirectoryNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookDirectoryNotfound", kNHMLocalizedStringsTableName, @"Help book Direcotry not found.")}];
             return nil;
         }
     }
 
-    _bookDirectoryPath = bookDirPathURL.path;
+    NSURL *infoDictFilePathURL = [bookDirPathURL URLByAppendingPathComponent:@"info.plist"];
+    if (![fileManager fileExistsAtPath:infoDictFilePathURL.path]) {
+        if (error) {
+            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoFileNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationFileNotFound", kNHMLocalizedStringsTableName, @"Help book info file not found.")}];
+            return nil;
+        }
+    }
+
+    return [self initWithHelpBookInfoPathURL:infoDictFilePathURL bookDirPathURL:bookDirPathURL error:error];
+}
+
+- (nullable instancetype)initWithHelpBookInfoPathURL:(nonnull NSURL *)infoPathURL bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
     NSDictionary *infoDict = [self loadInfoDictInDirectoryURL:bookDirPathURL error:error];
 
     if (!infoDict) {
@@ -79,7 +94,7 @@
     if (!indexPathURL) {
         return nil;
     }
-    self = [self initWithIndexPathURL:indexPathURL error:error];
+    self = [self initWithIndexPathURL:indexPathURL bookDirPathURL:bookDirPathURL error:error];
     if (self) {
         [self fillPropertiesFromInfoDictionary:infoDict];
         [self loadAnchorsFromPlist];
@@ -88,7 +103,7 @@
     return self;
 }
 
-- (nullable instancetype)initWithIndexPathURL:(NSURL *)indexPathURL error:(NSError **)error {
+- (nullable instancetype)initWithIndexPathURL:(nonnull NSURL *)indexPathURL  bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
     NSParameterAssert(indexPathURL);
 
     if (![[NSFileManager defaultManager] fileExistsAtPath:indexPathURL.path]) {
@@ -97,13 +112,11 @@
             return nil;
         }
     }
-
     self = [super init];
     if (self) {
         _indexFilePathURL = indexPathURL;
         _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", kNHMLocalizedStringsTableName, @"Help");
     }
-
     return self;
 }
 
@@ -198,17 +211,17 @@
 }
 
 - (BOOL)loadAnchorsFromPlist {
-    return [self loadAnchorsFromPlistFileManager:[NSFileManager defaultManager]];
+    return [self loadAnchorsFromPlist:self.anchorsPlistPath FileManager:[NSFileManager defaultManager]];
 }
 
-- (BOOL)loadAnchorsFromPlistFileManager:(NSFileManager *)fileManager {
-    if (!self.anchorsPlistPath) {
+- (BOOL)loadAnchorsFromPlist:(NSString *)plistPath FileManager:(NSFileManager *)fileManager {
+    if (!plistPath) {
         return NO;
     }
-    if (![fileManager fileExistsAtPath:self.anchorsPlistPath]) {
+    if (![fileManager fileExistsAtPath:plistPath]) {
         return NO;
     }
-    NSDictionary *anchorDict = [NSDictionary dictionaryWithContentsOfFile:self.anchorsPlistPath];
+    NSDictionary *anchorDict = [self dictFromPlistPath:plistPath];
     if (anchorDict) {
         self.anchors = anchorDict;
         return YES;
@@ -217,31 +230,42 @@
 }
 
 - (BOOL)loadContentsDictionaryFromPlist {
-    return [self loadContentsDictionaryFromPlistFileManager:[NSFileManager defaultManager]];
+    return [self loadContentsDictionaryFromPlist:self.contentsListPlistPath fileManager:[NSFileManager defaultManager]];
 }
 
-- (BOOL)loadContentsDictionaryFromPlistFileManager:(NSFileManager *)fileManager {
-    if (!self.contentsListPlistPath) {
+- (BOOL)loadContentsDictionaryFromPlist:(NSString *)plistPath fileManager:(NSFileManager *)fileManager {
+    if (!plistPath) {
         return NO;
     }
-    if (![fileManager fileExistsAtPath:self.contentsListPlistPath]) {
+    if (![fileManager fileExistsAtPath:plistPath]) {
         return NO;
     }
-    NSDictionary *contentsDict = [NSDictionary dictionaryWithContentsOfFile:self.contentsListPlistPath];
+    NSDictionary *contentsDict = [self dictFromPlistPath:plistPath];
     if (contentsDict) {
         self.contentsList = contentsDict;
         return YES;
     }
     return NO;
-
 }
 
-NSString *const kNHMHelpBookTitlePlistKey = @"HPDBookTitle";
-NSString *const kNHMHelpBookLanguagePlistKey = @"HPDBookLanguage";
-NSString *const kNHMHelpBookIndexFilePathPlistKey = @"HPDBookAccessPath";
+- (NSDictionary *)dictFromPlistPath:(NSString *)plistPath {
+    if (!plistPath) {
+        return nil;
+    }
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    if (dict && dict.count > 0) {
+        return dict;
+    }
+    return nil;
+}
+
+NSString *const kNHMHelpBookTitlePlistKey = @"NHMBookTitle";
+NSString *const kNHMHelpBookLanguagePlistKey = @"NHMBookLanguage";
+NSString *const kNHMHelpBookIndexFilePathPlistKey = @"NHMBookIndexFilePath";
 NSString *const kNHMHelpBookSearchIndexFilePathPlistKey = @"NHMBookSearchIndexFilePath";
 NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey = @"NHMBookAnchorsPlistFilePath";
 NSString *const kNHMHelpBookContentsPlistFilePathPlistKey = @"NHMBookContentsPlistFilePath";
+NSString *const kNHMHelpBookVersionKey = @"NHMBookVersion";
 
 NSString *const kNHMHelpBookErrorDomain = @"NHMHelpBookError";
 
