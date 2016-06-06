@@ -13,6 +13,8 @@
 
 @interface NHMHelpWindowController : NSWindowController
 
+@property (nonnull, readonly) IBOutlet NSView *contentView;
+
 /**
  *  Set to true to allow the window to float (and show the float window button)
  *  @note To change the image of the button, see the NHMHelpWindowToolbar class.
@@ -29,6 +31,12 @@
 /**
  *  Show or hide the taskbar. Hiding the taskbar will not unload the taskbar.
  */
-@property (nonatomic) BOOL showTaskbar;
+-(void)showTaskbar:(BOOL)show;
 
+/**
+ *  Is the taskbar currently showing?
+ *
+ *  @return Visibility of the taskbar.
+ */
+- (BOOL)taskbarIsShowing;
 @end

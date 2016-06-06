@@ -23,7 +23,7 @@
 //   hierarchy without worrying they will drop out of scope.
 
 /**
- *  Popup button to show the index and bookmarked items.
+ *  Popup button to show the contents.
  */
 @property (strong, nullable) IBOutlet NSPopUpButton *indexPopUpButton;
 

@@ -17,7 +17,7 @@
 @import WebKit;
 
 @interface NHMHelpWindowController ()
-
+@property (nonnull, readwrite) IBOutlet NSView *contentView;
 @property (strong, nonnull) NHMHelpWindowTaskbarViewController *taskbarController;
 @end
 
@@ -32,12 +32,12 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    self.showTaskbar = YES;
+    [self showTaskbar:YES];
     self.floatable = YES;
-    [self testWebsite];
+    //[self testWebsite];
 }
 
-
+/*
 // BEGIN TESTING
 - (void)testWebsite {
     WKWebView *webview = [[WKWebView alloc] init];
@@ -84,7 +84,7 @@
         NSLog(@"Can go back");
     }
 }
-
+*/
 // END TESTING
 
 #pragma mark - taskbar
@@ -104,12 +104,12 @@
     [taskbarC switchFloatToolbarButtonImageToState:NHMHelpWindowFloatStateOff];
 }
 
-- (void)setShowTaskbar:(BOOL)showTaskbar {
+-(void)showTaskbar:(BOOL)show {
     if (!self.taskbarController) {
         [self loadTaskbarController];
     }
     NSInteger taskBarIndex = [self taskbarControllerIndexInWindow];
-    if (showTaskbar) {
+    if (show) {
         if (taskBarIndex == NSNotFound) {
             [self.window addTitlebarAccessoryViewController:self.taskbarController];
         }
@@ -117,6 +117,15 @@
         if (taskBarIndex != NSNotFound) {
             [self.window removeTitlebarAccessoryViewControllerAtIndex:taskBarIndex];
         }
+    }
+}
+
+- (BOOL)taskbarIsShowing {
+    NSInteger taskBarIndex = [self taskbarControllerIndexInWindow];
+    if (taskBarIndex == NSNotFound) {
+        return NO;
+    } else {
+        return YES;
     }
 }
 
@@ -131,6 +140,7 @@
     return NSNotFound;
 }
 
+#pragma mark - floatable and other buttons
 - (void)setFloatable:(BOOL)allowFloatingWindow {
     _floatable = allowFloatingWindow;
     self.taskbarController.floatButton.hidden = !allowFloatingWindow;
