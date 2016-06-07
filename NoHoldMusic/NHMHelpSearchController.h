@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NHMHelpManagerProtocols.h"
 
-@interface NHMHelpSearchController : NSObject
+@interface NHMHelpSearchController : NSObject <NHMHelpManagerSearchProtocol>
 
 @end

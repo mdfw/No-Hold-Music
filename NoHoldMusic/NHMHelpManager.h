@@ -7,24 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AppKit/NSApplication.h>
-#import "NHMHelpBook.h"
+#import "NHMHelpManagerProtocols.h"
 
 @class NHMHelpWindowController;
+@class NHMHelpBooks;
+@class NHMHelpBook;
 
 @interface NHMHelpManager : NSObject
 
-@property (nullable) NHMHelpWindowController *helpWindow;
+@property (nonnull) NHMHelpBooks *helpBooks;
+@property (nullable) NHMHelpWindowController *helpWindowController;
+@property (nonnull) id <NHMHelpManagerContentProtocol> contentController;
+@property (nonnull) id <NHMHelpManagerSearchProtocol> searchController;
 
 + (nonnull instancetype)sharedHelpManager;
 
+/**
+ *  Open the index file of the associated book.
+ *
+ *  @param book The book to use.
+ *
+ *  @return Did the index file open.
+ */
+- (BOOL)openIndexFileInBook:(nullable NHMHelpBook *)book;
+- (BOOL)openHelpAnchor:(nonnull NSString *)anchor inBook:(nullable NHMHelpBook *)book;
+- (BOOL)findString:(nonnull NSString *)query inBook:(nullable NHMHelpBook *)book;
 
-- (void)openHelpAnchor:(nonnull NSString *)anchor inBook:(nullable NHMHelpBook *)book;
-- (void)findString:(nonnull NSString *)query inBook:(nullable NHMHelpBook *)book;
-
-/* Register one or more help books in the given bundle.  The main bundle is automatically registered by -openHelpAnchor:inBook: and -findString:inBook:.  You can use -registerBooksInBundle: to register help books in a plugin bundle, for example.  The Info.plist in the bundle should contain a help book directory path, which specifies one or more folders containing help books.  Returns NO if the bundle doesn't contain any help books or if registration fails.  Returns YES on successful registration. */
-- (BOOL)registerBooksInBundle:(nonnull NSBundle *)bundle;
-
-- (nonnull NSArray *)registeredHelpBooks;
+- (BOOL)registerBooksInBundle:(nonnull NSBundle *)bundle reset:(BOOL)reset;
 
 @end
