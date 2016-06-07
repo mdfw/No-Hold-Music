@@ -20,6 +20,20 @@
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="421"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="She-gX-Jja">
+                        <rect key="frame" x="163" y="202" width="154" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Help topic not available." id="yw6-mj-OTN">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="She-gX-Jja" firstAttribute="centerY" secondItem="se5-gp-TjO" secondAttribute="centerY" id="4Lj-xL-AlS"/>
+                    <constraint firstItem="She-gX-Jja" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="4Ny-Bz-WzI"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
