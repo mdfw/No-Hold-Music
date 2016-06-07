@@ -25,29 +25,6 @@
 
 @implementation NHMHelpBook
 
-+ (nullable NSArray <NHMHelpBook *>*)allBooksInBundle:(nullable NSBundle *)bundle helpDirPath:(nullable NSString *)dirPath bookFileExtension:(nullable NSString*)extension {
-    if (!bundle) {
-        bundle = [NSBundle bundleForClass:[self class]];
-    }
-    if (!extension) {
-        extension = @"help";
-    }
-
-    NSArray <NSURL *> *urls = [bundle URLsForResourcesWithExtension:extension subdirectory:dirPath];
-    NSMutableArray *bookArray = [NSMutableArray array];
-    for (NSURL *bookURL in urls) {
-        NHMHelpBook *thisBook = [[NHMHelpBook alloc] initWithBookDirPathURL:bookURL error:nil];
-        if (thisBook) {
-            [bookArray addObject:thisBook];
-        }
-    }
-    if (bookArray.count > 0) {
-        return [bookArray copy];
-    } else {
-        return nil;
-    }
-}
-
 - (nullable instancetype)init {
     NSAssert(NO, @"NHMHelpBook cannot be initialized with -init. Use initWithIndexPathURL");
     return nil;
@@ -103,7 +80,7 @@
     return self;
 }
 
-- (nullable instancetype)initWithIndexPathURL:(nonnull NSURL *)indexPathURL  bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
+- (nullable instancetype)initWithIndexPathURL:(nonnull NSURL *)indexPathURL bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
     NSParameterAssert(indexPathURL);
 
     if (![[NSFileManager defaultManager] fileExistsAtPath:indexPathURL.path]) {
@@ -115,6 +92,7 @@
     self = [super init];
     if (self) {
         _indexFilePathURL = indexPathURL;
+        _bookDirectoryPath = bookDirPathURL.path;
         _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", kNHMLocalizedStringsTableName, @"Help");
     }
     return self;
@@ -161,6 +139,10 @@
 
 - (void)fillPropertiesFromInfoDictionary:(nonnull NSDictionary *)dict {
     for (NSString *key in dict.allKeys) {
+        if ([key isEqualToString:kNHMHelpBookLanguagesPlistKey]) {
+            self.languages = [dict objectForKey:key];
+            continue;
+        }
         NSString *propName = [self propertyNameForInfoDictKey:key];
         if (propName) {
             id propValue = [dict valueForKey:key];
@@ -192,8 +174,8 @@
     if ([key isEqualToString:kNHMHelpBookTitlePlistKey]) {
         return NSStringFromSelector(@selector(bookTitle));
     }
-    if ([key isEqualToString:kNHMHelpBookLanguagePlistKey]) {
-        return NSStringFromSelector(@selector(language));
+    if ([key isEqualToString:kNHMHelpBookLanguagesPlistKey]) {
+        return NSStringFromSelector(@selector(languages));
     }
     if ([key isEqualToString:kNHMHelpBookIndexFilePathPlistKey]) {
         return NSStringFromSelector(@selector(indexFilePath));
@@ -259,8 +241,37 @@
     return nil;
 }
 
+#pragma mark - comparison
+- (BOOL)isEqualToHelpBook:(nonnull NHMHelpBook *)book {
+    if (![self.indexFilePath isEqualToString:book.indexFilePath]) {
+        return NO;
+    }
+    if (![self.bookDirectoryPath isEqualToString:book.bookDirectoryPath]) {
+        return NO;
+    }
+    if (![self.languages isEqual:book.languages]) {
+        return NO;
+    }
+    if (![self.searchIndexPath isEqualToString:book.searchIndexPath]) {
+        return NO;
+    }
+    if (![self.anchorsPlistPath isEqualToString:book.anchorsPlistPath]) {
+        return NO;
+    }
+    if (![self.contentsListPlistPath isEqualToString:book.contentsListPlistPath]) {
+        return NO;
+    }
+    if (![self.bookVersion isEqualToString:book.bookVersion]) {
+        return NO;
+    }
+    return YES;
+}
+
+
+#pragma mark - NHMHelpBook info.plist keys
+
 NSString *const kNHMHelpBookTitlePlistKey = @"NHMBookTitle";
-NSString *const kNHMHelpBookLanguagePlistKey = @"NHMBookLanguage";
+NSString *const kNHMHelpBookLanguagesPlistKey = @"NHMBookLanguages";
 NSString *const kNHMHelpBookIndexFilePathPlistKey = @"NHMBookIndexFilePath";
 NSString *const kNHMHelpBookSearchIndexFilePathPlistKey = @"NHMBookSearchIndexFilePath";
 NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey = @"NHMBookAnchorsPlistFilePath";

@@ -19,7 +19,7 @@
 /**
  *  The language of the book.
  */
-@property (nullable) NSString *language;
+@property (nullable) NSArray *languages;
 
 /**
  *  The path of the book directory.
@@ -66,18 +66,6 @@
  *  The version of the book.
  */
 @property (nullable) NSString *bookVersion;
-
-#pragma mark - class methods
-/**
- *  Searches bundle for all help books.
- *
- *  @param bundle    The bundle to search. Defaults to main bundle.
- *
- *  @param extension The extension used for the help directories/bundles. Defaults to ".help"
- *
- *  @return An array of books or nil if none found.
- */
-+ (nullable NSArray <NHMHelpBook *>*)allBooksInBundle:(nullable NSBundle *)bundle helpDirPath:(nullable NSString *)dirPath bookFileExtension:(nullable NSString*)extension;
 
 #pragma mark - init
 /**
@@ -129,6 +117,16 @@
  */
 - (BOOL)loadContentsDictionaryFromPlist;
 
+/**
+ *  Is one help book equal to the other. 
+ *  @warning This only compares the title, language array, path(s) and version variables. Does not compare the anchor list or contents.
+ *
+ *  @param book The book to compare this book against.
+ *
+ *  @return YES if the two books are equal.
+ */
+- (BOOL)isEqualToHelpBook:(nonnull NHMHelpBook *)book;
+
 @end
 
 #pragma mark - NHMHelpBook info.plist keys
@@ -136,7 +134,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT NSString *const kNHMHelpBookTitlePlistKey; // NHMBookTitle
-FOUNDATION_EXPORT NSString *const kNHMHelpBookLanguagePlistKey; // NHMBookLanguage
+FOUNDATION_EXPORT NSString *const kNHMHelpBookLanguagesPlistKey; // NHMBookLanguages
 FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexFilePathPlistKey; // NHMBookIndexFilePath
 FOUNDATION_EXPORT NSString *const kNHMHelpBookSearchIndexFilePathPlistKey; // NHMBookSearchIndexFilePath
 FOUNDATION_EXPORT NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey; // NHMBookAnchorsPlistFilePath
