@@ -20,7 +20,7 @@
 @interface NHMHelpBook ()
 @property (readwrite) BOOL isSearchable;
 @property (readwrite) NSString *indexFilePath;
-@property (readwrite) NSURL *indexFileExternalURL;
+@property (readwrite) NSURL *indexFileURL;
 
 @end
 
@@ -62,23 +62,36 @@
     if (!infoDict) {
         return nil;
     }
-
-    NSString *indexFilePathComponent = [self indexFilePathComponentFromInfoDict:infoDict error:error];
-    if (!indexFilePathComponent) {
-        return nil;
+    self = [self initWithIndexPathComponent:[infoDict objectForKey:kNHMHelpBookIndexFilePathPlistKey] bookDirPathURL:bookDirPathURL error:error];
+    if (!self) {
+        NSURL *indexURL = [NSURL URLWithString:[infoDict objectForKey:kNHMHelpBookIndexURLPlistKey]];
+        if (indexURL) {
+            self = [self initWithIndexURL:indexURL bookDirPathURL:bookDirPathURL error:error];
+        }
     }
-
-    NSURL *indexPathURL = [bookDirPathURL URLByAppendingPathComponent:indexFilePathComponent];
-    if (!indexPathURL) {
+    if (!self && error) {
+        *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoDictionaryInvalid userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationDictionaryInvalid", kNHMLocalizedStringsTableName, @"Help book invalid.")}];
         return nil;
+
     }
-    self = [self initWithIndexPathURL:indexPathURL bookDirPathURL:bookDirPathURL error:error];
     if (self) {
         [self fillPropertiesFromInfoDictionary:infoDict];
         [self loadAnchorsFromPlist];
         [self loadContentsDictionaryFromPlist];
     }
     return self;
+}
+
+// Private
+- (nullable instancetype)initWithIndexPathComponent:(nullable NSString *)indexPathComponent bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
+    if (!indexPathComponent || indexPathComponent.length == 0) {
+        return nil;
+    }
+    NSURL *indexPathURL = [bookDirPathURL URLByAppendingPathComponent:indexPathComponent];
+    if (!indexPathURL) {
+        return nil;
+    }
+    return [self initWithIndexPathURL:indexPathURL bookDirPathURL:bookDirPathURL error:error];
 }
 
 - (nullable instancetype)initWithIndexPathURL:(nonnull NSURL *)indexPathURL bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
@@ -99,16 +112,15 @@
     return self;
 }
 
-- (nullable instancetype)initWithIndexURL:(nonnull NSURL *)indexExternalURL  bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
-    NSParameterAssert(indexExternalURL);
+- (nullable instancetype)initWithIndexURL:(nonnull NSURL *)indexURL  bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
+    NSParameterAssert(indexURL);
     self = [super init];
     if (self) {
-        _indexFileExternalURL = indexExternalURL;
+        _indexFileURL = indexURL;
         _bookDirectoryPath = bookDirPathURL.path;
         _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", kNHMLocalizedStringsTableName, @"Help");
     }
     return self;
-
 }
 
 - (NSDictionary *)loadInfoDictInDirectoryURL:(NSURL *)bookDirPathURL error:(NSError **)error {
@@ -136,18 +148,6 @@
     }
     NSDictionary *infoDict = [NSDictionary dictionaryWithContentsOfURL:infoplistURL];
     return infoDict;
-}
-
-- (NSString *)indexFilePathComponentFromInfoDict:(NSDictionary *)infoDict error:(NSError **)error {
-    NSString *indexFilePath = [infoDict objectForKey:kNHMHelpBookIndexFilePathPlistKey];
-
-    if (!indexFilePath || indexFilePath.length == 0) {
-        if (error) {
-            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoDictionaryInvalid userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationDictionaryInvalid", kNHMLocalizedStringsTableName, @"Help book invalid.")}];
-            return nil;
-        }
-    }
-    return indexFilePath;
 }
 
 - (void)fillPropertiesFromInfoDictionary:(nonnull NSDictionary *)dict {
@@ -286,6 +286,7 @@
 NSString *const kNHMHelpBookTitlePlistKey = @"NHMBookTitle";
 NSString *const kNHMHelpBookLanguagesPlistKey = @"NHMBookLanguages";
 NSString *const kNHMHelpBookIndexFilePathPlistKey = @"NHMBookIndexFilePath";
+NSString *const kNHMHelpBookIndexURLPlistKey = @"NHMHelpBookIndexURLPlistKey";
 NSString *const kNHMHelpBookSearchIndexFilePathPlistKey = @"NHMBookSearchIndexFilePath";
 NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey = @"NHMBookAnchorsPlistFilePath";
 NSString *const kNHMHelpBookContentsPlistFilePathPlistKey = @"NHMBookContentsPlistFilePath";

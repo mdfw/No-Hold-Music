@@ -155,6 +155,7 @@ NS_ASSUME_NONNULL_BEGIN
 FOUNDATION_EXPORT NSString *const kNHMHelpBookTitlePlistKey; // NHMBookTitle
 FOUNDATION_EXPORT NSString *const kNHMHelpBookLanguagesPlistKey; // NHMBookLanguages
 FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexFilePathPlistKey; // NHMBookIndexFilePath
+FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexURLPlistKey; // NHMHelpBookIndexURLPlistKey
 FOUNDATION_EXPORT NSString *const kNHMHelpBookSearchIndexFilePathPlistKey; // NHMBookSearchIndexFilePath
 FOUNDATION_EXPORT NSString *const kNHMHelpBookAnchorPlistFilePathPlistKey; // NHMBookAnchorsPlistFilePath
 FOUNDATION_EXPORT NSString *const kNHMHelpBookContentsPlistFilePathPlistKey; // NHMBookContentsPlistFilePath
