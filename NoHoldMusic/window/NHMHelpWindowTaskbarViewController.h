@@ -43,6 +43,11 @@
 @property (strong, nullable) IBOutlet NSButton *shareButton;
 
 /**
+ *  A progress indicator to use when loading. Hidden by default.
+ */
+@property (strong, nullable) IBOutlet NSProgressIndicator *progressIndicator;
+
+/**
  *  Search field.
  */
 @property (strong, nullable) IBOutlet NSSearchField *searchField;

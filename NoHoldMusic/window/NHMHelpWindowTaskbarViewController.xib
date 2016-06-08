@@ -10,6 +10,7 @@
                 <outlet property="floatButton" destination="0GP-9W-5yr" id="TLd-wy-oeS"/>
                 <outlet property="forwardButton" destination="pnf-bo-DNB" id="uKh-7i-axt"/>
                 <outlet property="indexPopUpButton" destination="8S1-Nc-1F4" id="rtv-mc-8mD"/>
+                <outlet property="progressIndicator" destination="Ryb-gd-cl3" id="Cct-ad-gDt"/>
                 <outlet property="searchField" destination="e8p-H7-hwZ" id="ljs-91-CTF"/>
                 <outlet property="shareButton" destination="xBA-sW-MR0" id="wAx-eK-C3u"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -92,17 +93,23 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
+                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Ryb-gd-cl3">
+                    <rect key="frame" x="261" y="8" width="16" height="16"/>
+                </progressIndicator>
             </subviews>
             <constraints>
                 <constraint firstItem="8S1-Nc-1F4" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="1wx-GI-6vT"/>
                 <constraint firstItem="0GP-9W-5yr" firstAttribute="leading" secondItem="e8p-H7-hwZ" secondAttribute="trailing" constant="8" id="2NM-Qg-E73"/>
                 <constraint firstItem="Ayg-L7-hBm" firstAttribute="centerY" secondItem="8S1-Nc-1F4" secondAttribute="centerY" id="Fgj-nY-6Sg"/>
+                <constraint firstItem="e8p-H7-hwZ" firstAttribute="leading" secondItem="Ryb-gd-cl3" secondAttribute="trailing" constant="8" id="GRH-6L-giY"/>
+                <constraint firstItem="Ryb-gd-cl3" firstAttribute="centerY" secondItem="pnf-bo-DNB" secondAttribute="centerY" id="GXm-MH-tnH"/>
                 <constraint firstItem="8S1-Nc-1F4" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="Igp-ET-dfg"/>
                 <constraint firstItem="xBA-sW-MR0" firstAttribute="leading" secondItem="pnf-bo-DNB" secondAttribute="trailing" constant="8" symbolic="YES" id="Ker-Es-ZCH"/>
                 <constraint firstItem="0GP-9W-5yr" firstAttribute="centerY" secondItem="Ayg-L7-hBm" secondAttribute="centerY" id="Obq-fM-gh7"/>
                 <constraint firstItem="xBA-sW-MR0" firstAttribute="centerY" secondItem="Ayg-L7-hBm" secondAttribute="centerY" id="RZe-Sg-Hxu"/>
                 <constraint firstItem="e8p-H7-hwZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xBA-sW-MR0" secondAttribute="trailing" constant="8" symbolic="YES" id="S84-Ey-NyR"/>
                 <constraint firstItem="pnf-bo-DNB" firstAttribute="centerY" secondItem="Ayg-L7-hBm" secondAttribute="centerY" id="SJc-Fr-WEW"/>
+                <constraint firstItem="Ryb-gd-cl3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xBA-sW-MR0" secondAttribute="trailing" constant="8" symbolic="YES" id="WQr-JA-SxM"/>
                 <constraint firstItem="Ayg-L7-hBm" firstAttribute="leading" secondItem="8S1-Nc-1F4" secondAttribute="trailing" constant="8" symbolic="YES" id="e9c-Je-EzZ"/>
                 <constraint firstItem="e8p-H7-hwZ" firstAttribute="centerY" secondItem="Ayg-L7-hBm" secondAttribute="centerY" id="kdZ-s5-4K2"/>
                 <constraint firstAttribute="trailing" secondItem="0GP-9W-5yr" secondAttribute="trailing" constant="5" id="m2l-ED-0PQ"/>
