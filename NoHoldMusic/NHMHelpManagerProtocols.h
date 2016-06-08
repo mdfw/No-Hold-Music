@@ -12,7 +12,7 @@
 @class NHMHelpWindowController;
 
 @protocol NHMHelpManagerContentProtocol <NSObject>
-
+@required
 - (BOOL)showIndexFileInBook:(nonnull NHMHelpBook *)book withHelpWindowController:(nonnull NHMHelpWindowController *)windowController;
 - (BOOL)showHelpAnchor:(nonnull NSString *)anchor inBook:(nonnull NHMHelpBook *)book withHelpWindowController:(nonnull NHMHelpWindowController *)windowController;
 

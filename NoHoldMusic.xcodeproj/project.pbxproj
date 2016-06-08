@@ -22,9 +22,11 @@
 		34510AB91D03F224008FCD4A /* NHMHelpSearchController.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AB71D03F224008FCD4A /* NHMHelpSearchController.h */; };
 		34510ABA1D03F224008FCD4A /* NHMHelpSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AB81D03F224008FCD4A /* NHMHelpSearchController.m */; };
 		34510ABC1D04D468008FCD4A /* NHMHelpManagerProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510ABB1D04D468008FCD4A /* NHMHelpManagerProtocols.h */; };
-		34510ABE1D0638F9008FCD4A /* NHMHelpWindowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510ABD1D0638F9008FCD4A /* NHMHelpWindowProtocols.h */; };
+		34510ABE1D0638F9008FCD4A /* NHMHelpWindowProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510ABD1D0638F9008FCD4A /* NHMHelpWindowProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34510AC11D064840008FCD4A /* NHMHelpBooks.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510ABF1D064840008FCD4A /* NHMHelpBooks.h */; };
 		34510AC21D064840008FCD4A /* NHMHelpBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AC01D064840008FCD4A /* NHMHelpBooks.m */; };
+		34510AC71D07D1A3008FCD4A /* NHMHelpWindowContentResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AC51D07D1A3008FCD4A /* NHMHelpWindowContentResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34510AC81D07D1A3008FCD4A /* NHMHelpWindowContentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AC61D07D1A3008FCD4A /* NHMHelpWindowContentResponse.m */; };
 		345498301CFFEB1B00B209E9 /* NHMHelpBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345498311CFFEB1B00B209E9 /* NHMHelpBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */; };
 		348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */; };
@@ -79,6 +81,8 @@
 		34510ABD1D0638F9008FCD4A /* NHMHelpWindowProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowProtocols.h; path = window/NHMHelpWindowProtocols.h; sourceTree = "<group>"; };
 		34510ABF1D064840008FCD4A /* NHMHelpBooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpBooks.h; sourceTree = "<group>"; };
 		34510AC01D064840008FCD4A /* NHMHelpBooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpBooks.m; sourceTree = "<group>"; };
+		34510AC51D07D1A3008FCD4A /* NHMHelpWindowContentResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowContentResponse.h; path = window/NHMHelpWindowContentResponse.h; sourceTree = "<group>"; };
+		34510AC61D07D1A3008FCD4A /* NHMHelpWindowContentResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindowContentResponse.m; path = window/NHMHelpWindowContentResponse.m; sourceTree = "<group>"; };
 		3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpBook.h; sourceTree = "<group>"; };
 		3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpBook.m; sourceTree = "<group>"; };
 		348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMFloatBalloonImage.h; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				34510ABD1D0638F9008FCD4A /* NHMHelpWindowProtocols.h */,
+				34510AC51D07D1A3008FCD4A /* NHMHelpWindowContentResponse.h */,
+				34510AC61D07D1A3008FCD4A /* NHMHelpWindowContentResponse.m */,
 				34B0D7CA1CEE3A2700BFF57D /* NHMHelpWindowConstants.h */,
 				34B0D7C81CEE3A0800BFF57D /* NHMHelpWindowConstants.m */,
 				348E3AC51CE2AC5B00522044 /* NHMHelpWindowController.h */,
@@ -252,6 +258,7 @@
 				345498301CFFEB1B00B209E9 /* NHMHelpBook.h in Headers */,
 				34510ABC1D04D468008FCD4A /* NHMHelpManagerProtocols.h in Headers */,
 				34510AB91D03F224008FCD4A /* NHMHelpSearchController.h in Headers */,
+				34510AC71D07D1A3008FCD4A /* NHMHelpWindowContentResponse.h in Headers */,
 				348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */,
 				34510AB11D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h in Headers */,
 				34A9A8081CE4477B00460FE3 /* NHMHelpManager.h in Headers */,
@@ -404,6 +411,7 @@
 				348E3AC31CE2A0FD00522044 /* NHMFloatBalloonImage.m in Sources */,
 				345498311CFFEB1B00B209E9 /* NHMHelpBook.m in Sources */,
 				34510AAA1D00FE05008FCD4A /* NoHoldMusicConstants.m in Sources */,
+				34510AC81D07D1A3008FCD4A /* NHMHelpWindowContentResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NHMHelpWindowController">
             <connections>
-                <outlet property="contentView" destination="se5-gp-TjO" id="1O5-EA-qLt"/>
+                <outlet property="mainView" destination="se5-gp-TjO" id="yGF-Zd-aFJ"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>

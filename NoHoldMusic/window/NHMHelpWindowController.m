@@ -14,11 +14,14 @@
 //  and limitations under the License.
 
 #import "NHMHelpWindowController.h"
+#import "NHMHelpWindowProtocols.h"
 @import WebKit;
 
 @interface NHMHelpWindowController ()
-@property (nonnull, readwrite) IBOutlet NSView *contentView;
+@property (nonnull, readwrite) IBOutlet NSView *mainView;
+@property (nullable, readwrite) NSView *contentView;
 @property (strong, nonnull) NHMHelpWindowTaskbarViewController *taskbarController;
+
 @end
 
 @implementation NHMHelpWindowController
@@ -34,9 +37,24 @@
     [super windowDidLoad];
     [self showTaskbar:YES];
     self.floatable = YES;
-    //[self testWebsite];
 }
 
+- (void)setContentView:(NSView *)contentView {
+    self.mainView.subviews = [NSArray array];
+    if (contentView) {
+        _contentView = contentView;
+        [self addToMainViewContentView:contentView];
+    } else {
+        _contentView = nil;
+    }
+}
+
+- (void)addToMainViewContentView:(NSView *)contentView {
+    [self.mainView addSubview:contentView];
+    [contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[contentView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
+    [self.mainView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[contentView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
+}
 /*
 // BEGIN TESTING
 - (void)testWebsite {
@@ -167,9 +185,88 @@
 }
 
 - (IBAction)showSharingPicker:(id)sender {
+    // FIXME
     NSArray * items = @[@"bob's your uncle", @"James"];
     NSSharingServicePicker * picker = [[NSSharingServicePicker alloc] initWithItems:items];
     [picker showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMinYEdge];
 }
 
+#pragma mark - content
+- (void)showAnchor:(nonnull NSString *)anchor {
+    if (!self.contentDelegate || ![self.contentDelegate respondsToSelector:@selector(contentTypeForAnchor:)]) {
+        return;
+    }
+    NHMHelpWindowContentType contentType = [self.contentDelegate contentTypeForAnchor:anchor];
+    switch (contentType) {
+        case NHMHelpWindowContentURL:
+            [self showURLForAnchor:anchor];
+            break;
+        case NHMHelpWindowContentFilePath:
+            [self showPathForAnchor:anchor];
+            break;
+        case NHMHelpWindowContentHTMLString:
+            [self showHTMLStringForAnchor:anchor];
+            break;
+        case NHMHelpWindowContentAttributedString:
+            [self showAttributedStringForAnchor:anchor];
+            break;
+        case NHMHelpWindowContentOther:
+            return;
+        default:
+            break;
+    }
+}
+
+- (void)showURLForAnchor:(NSString *)anchor {
+    if (!self.contentDelegate || ![self.contentDelegate respondsToSelector:@selector(urlForAnchor:)]) {
+        return;
+    }
+
+    NSURL *url = [self.contentDelegate urlForAnchor:anchor];
+    if (!url) {
+        return;
+    }
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    if (urlRequest) {
+        [self setContentViewToWebView];
+        if ([self.contentView respondsToSelector:@selector(loadRequest:)]) {
+            [(WKWebView*)self.contentView loadRequest:urlRequest];
+        }
+    }
+}
+
+- (void)showPathForAnchor:(NSString *)anchor {
+    if (!self.contentDelegate || ![self.contentDelegate respondsToSelector:@selector(pathForAnchor:enclosingPath:)]) {
+        return;
+    }
+
+    NSString *path = [self.contentDelegate pathForAnchor:anchor enclosingPath:<#(nullable NSString *)#>];
+    if (!path) {
+        return;
+    }
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    if (urlRequest) {
+        [self setContentViewToWebView];
+        if ([self.contentView respondsToSelector:@selector(loadRequest:)]) {
+            [(WKWebView*)self.contentView loadRequest:urlRequest];
+        }
+    }
+
+}
+
+- (void)showHTMLStringForAnchor:(NSString *)anchor {
+
+}
+
+- (void)showAttributedStringForAnchor:(NSString *)anchor {
+
+}
+
+- (void)setContentViewToWebView {
+
+}
+
+- (void)setContentViewToTextView {
+
+}
 @end

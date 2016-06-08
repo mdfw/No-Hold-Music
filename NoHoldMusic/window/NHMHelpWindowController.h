@@ -8,12 +8,26 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NHMHelpWindowTaskbarViewController.h"
+#import "NHMHelpWindowProtocols.h"
 
 @class NHMHelpWindowToolbar;
 
 @interface NHMHelpWindowController : NSWindowController
 
-@property (nonnull, readonly) IBOutlet NSView *contentView;
+@property (nullable) id <NHMHelpWindowContentProtocol> contentDelegate;
+@property (nullable) id <NHMHelpWindowTaskbarProtocol> taskbarDelegate;
+@property (nullable) id <NHMHelpWindowSearchProtocol> searchDelegate;
+
+/**
+ *  The holding view of the window. While you can manipulate the subviews, it's better to use the contentView directly. Useful for getting frame size.
+ */
+@property (nonnull, readonly) IBOutlet NSView *mainView;
+
+/**
+ *  The content view of the window. It is fully immersed in the mainView. When you set this, any subviews of mainView are removed and this is inserted and fully abutted to the top,right,bottom, and left.
+ *  If nil is passed, the contentView is cleared.
+ */
+@property (nullable, readonly, nonatomic) __kindof NSView *contentView;
 
 /**
  *  Set to true to allow the window to float (and show the float window button)
@@ -39,4 +53,12 @@
  *  @return Visibility of the taskbar.
  */
 - (BOOL)taskbarIsShowing;
+
+/**
+ *  Calls the NHMHelpWindowContentProtocol delegate with the anchor.
+ *  Initally, it calls contentTypeForAnchor:anchor: then the appropriate item from there.
+ *
+ *  @param anchor The anchor for this item.
+ */
+- (void)showAnchor:(nonnull NSString *)anchor;
 @end

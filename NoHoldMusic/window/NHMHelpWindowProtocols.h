@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NHMHelpWindowConstants.h"
+#import "NHMHelpWindowContentResponse.h"
 
 typedef NS_ENUM(NSUInteger, NHMHelpWindowContentType) {
     NHMHelpWindowContentURL,
+    NHMHelpWindowContentFilePath,
     NHMHelpWindowContentHTMLString,
     NHMHelpWindowContentAttributedString,
     NHMHelpWindowContentOther
@@ -17,35 +20,39 @@ typedef NS_ENUM(NSUInteger, NHMHelpWindowContentType) {
 
 @protocol NHMHelpWindowContentProtocol <NSObject>
 @required
-- (NHMHelpWindowContentType)contentTypeForAnchor:(NSString *)anchor;
+- (NHMHelpWindowContentType)contentTypeForAnchor:(nonnull NSString *)anchor;
 @optional
-- (NSURL *)urlForAnchor:(NSString *)anchor;
-- (NSString *)htmlStringForAnchor:(NSString *)anchor;
-- (NSAttributedString *)attributedStringForAnchor:(NSString *)anchor;
-- (id)beganLoadingContentForAnchor:(NSString *)anchor;
+- (nonnull NHMHelpWindowURLContentResponse *)urlForAnchor:(nonnull NSString *)anchor;
+- (nonnull NHMHelpWindowFilePathContentResponse *)pathForAnchor:(nonnull NSString *)anchor;
+- (nonnull NHMHelpWindowHTMLStringContentResponse *)htmlStringForAnchor:(nonnull NSString *)anchor baseURL:(nullable NSURL *)baseURL;
+
+- (nonnull NHMHelpWindowAttributedStringContentResponse *)attributedStringForAnchor:(nonnull NSString *)anchor;
+
+- (nonnull __kindof NSView *)didBeginLoadingContentForAnchor:(nonnull NSString *)anchor;
 
 
 @end
 
 @protocol NHMHelpWindowTaskbarProtocol <NSObject>
-- (BOOL)contentsButtonEnabledForAnchor:(NSString *)anchor;
-- (NSDictionary {<NSString *>, <NSString *>} *)contentsForAnchor:(NSString *)anchor;
+- (BOOL)contentsButtonEnabledForAnchor:(nonnull NSString *)anchor;
+- (nullable NSDictionary <NSString *, NSString *> *)contentsForAnchor:(nonnull NSString *)anchor;
 
-- (BOOL)backButtonEnabledForAnchor:(NSString *)anchor;
-- (@selector)backButtonActionForAnchor:(NSString *)anchor;
+- (BOOL)backButtonEnabledForAnchor:(nonnull NSString *)anchor;
+- (nonnull SEL)backButtonActionForAnchor:(nonnull NSString *)anchor;
 
-- (BOOL)frontButtonEnabledForAnchor:(NSString *)anchor;
-- (@selector)frontButtonActionForAnchor:(NSString *)anchor;
+- (BOOL)frontButtonEnabledForAnchor:(nonnull NSString *)anchor;
+- (nonnull SEL)frontButtonActionForAnchor:(nonnull NSString *)anchor;
 
-- (BOOL)sharingButtonEnabledForAnchor:(NSString *)anchor;
-- (NSSharingServicePicker *)sharingPickerForAnchor:(NSString *)anchor;
+- (BOOL)sharingButtonEnabledForAnchor:(nonnull NSString *)anchor;
+- (nonnull NSSharingServicePicker *)sharingPickerForAnchor:(nonnull NSString *)anchor;
 
-- (BOOL)searchFieldEnabledForAnchor:(NSString *)anchor;
+- (BOOL)searchFieldEnabledForAnchor:(nonnull NSString *)anchor;
 @end
 
 
 @protocol NHMHelpWindowSearchProtocol <NSObject>
 
-- (NSArray <NSString *> *)suggestionsForSearchTerm:(NSString *)string;
+- (nullable NSArray <NSString *> *)suggestionsForSearchTerm:(nonnull NSString *)string;
 
 @end
+
