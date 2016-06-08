@@ -19,7 +19,8 @@
 
 @interface NHMHelpBook ()
 @property (readwrite) BOOL isSearchable;
-@property (readwrite) NSURL *indexFilePathURL;
+@property (readwrite) NSString *indexFilePath;
+@property (readwrite) NSURL *indexFileExternalURL;
 
 @end
 
@@ -91,11 +92,23 @@
     }
     self = [super init];
     if (self) {
-        _indexFilePathURL = indexPathURL;
+        _indexFilePath = indexPathURL.path;
         _bookDirectoryPath = bookDirPathURL.path;
         _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", kNHMLocalizedStringsTableName, @"Help");
     }
     return self;
+}
+
+- (nullable instancetype)initWithIndexURL:(nonnull NSURL *)indexExternalURL  bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error {
+    NSParameterAssert(indexExternalURL);
+    self = [super init];
+    if (self) {
+        _indexFileExternalURL = indexExternalURL;
+        _bookDirectoryPath = bookDirPathURL.path;
+        _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", kNHMLocalizedStringsTableName, @"Help");
+    }
+    return self;
+
 }
 
 - (NSDictionary *)loadInfoDictInDirectoryURL:(NSURL *)bookDirPathURL error:(NSError **)error {

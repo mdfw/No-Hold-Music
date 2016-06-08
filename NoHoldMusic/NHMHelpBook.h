@@ -27,9 +27,16 @@
 @property (nullable) NSString *bookDirectoryPath;
 
 /**
- *  URL path of the index (start) html file.
+ *  Path of the index (start) html file.
+ *  @note Either the indexFilePath or indexFileURL should be filled.
  */
-@property (nonnull, readonly) NSString *indexFilePath;
+@property (nullable, readonly) NSString *indexFilePath;
+
+/**
+ *  URL of the index (typically an external).
+ *  @note Either the indexFilePath or indexFileURL should be filled.
+*/
+@property (nullable, readonly) NSURL *indexFileURL;
 
 /**
  *  URL path of the search index. 
@@ -103,6 +110,18 @@
  *  @warning This does not load any other files - it is the responsibility of the caller to set all properties besides indexPathURL and bookDirPathURL properties.
  */
 - (nullable instancetype)initWithIndexPathURL:(nonnull NSURL *)indexPathURL  bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error;
+
+/**
+ *  Creates a help book with the minimum required syntax.
+ *  @note Designated initializer #2.
+ *
+ *  @param indexURL         The url for the index.
+ *  @param bookDirPathURL   The directory
+ *  @param error            Error.
+ *
+ *  @return An instance of NHMHelpBook or nil on error.
+ */
+- (nullable instancetype)initWithIndexURL:(nonnull NSURL *)indexURL  bookDirPathURL:(nullable NSURL *)bookDirPathURL error:(NSError * _Nullable * _Nullable)error;
 
 #pragma mark - loaders
 /**
