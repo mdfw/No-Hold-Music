@@ -15,17 +15,13 @@
 //
 
 #import "NSApplication+NHMHelpExtension.h"
-#import "NHMHelpWindowcontroller.h"
+#import "NHMHelpWindowController.h"
 #import "NHMHelpManager.h"
 
 @implementation NSApplication (NHMHelpExtension)
 
 - (IBAction)nhm_showHelp:(nullable id)sender {
-    NHMHelpWindowController *newWin = [[NHMHelpWindowController alloc] init];
-    if (newWin) {
-        NHMHelpManager.sharedHelpManager.helpWindow = newWin;
-        [newWin showWindow:sender];
-    }
+    [NHMHelpManager.sharedHelpManager.helpWindowController showWindow:sender];
 }
 
 @end
