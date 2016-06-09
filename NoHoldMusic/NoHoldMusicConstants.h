@@ -9,7 +9,6 @@
 #ifndef NoHoldMusic_Constant_h
 #define NoHoldMusic_Constant_h
 
-FOUNDATION_EXPORT NSString *const kNHMLocalizedStringsTableName;
 FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexAnchor;
 
 #endif

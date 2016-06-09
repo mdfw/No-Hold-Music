@@ -40,7 +40,7 @@
     BOOL isDir;
     if (![fileManager fileExistsAtPath:bookDirPathURL.path isDirectory:&isDir] || !isDir) {
         if (error) {
-            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorBookDirectoryNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookDirectoryNotfound", kNHMLocalizedStringsTableName, @"Help book Direcotry not found.")}];
+            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorBookDirectoryNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookDirectoryNotfound", @"NoHoldMusic", @"Help book Direcotry not found.")}];
             return nil;
         }
     }
@@ -48,7 +48,7 @@
     NSURL *infoDictFilePathURL = [bookDirPathURL URLByAppendingPathComponent:@"info.plist"];
     if (![fileManager fileExistsAtPath:infoDictFilePathURL.path]) {
         if (error) {
-            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoFileNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationFileNotFound", kNHMLocalizedStringsTableName, @"Help book info file not found.")}];
+            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoFileNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationFileNotFound", @"NoHoldMusic", @"Help book info file not found.")}];
             return nil;
         }
     }
@@ -70,7 +70,7 @@
         }
     }
     if (!self && error) {
-        *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoDictionaryInvalid userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationDictionaryInvalid", kNHMLocalizedStringsTableName, @"Help book invalid.")}];
+        *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoDictionaryInvalid userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationDictionaryInvalid", @"NoHoldMusic", @"Help book invalid.")}];
         return nil;
 
     }
@@ -99,7 +99,7 @@
 
     if (![[NSFileManager defaultManager] fileExistsAtPath:indexPathURL.path]) {
         if (error) {
-            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorIndexFileNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookIndexFileNotfound", kNHMLocalizedStringsTableName, @"Help book index file not found.")}];
+            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorIndexFileNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookIndexFileNotfound", @"NoHoldMusic", @"Help book index file not found.")}];
             return nil;
         }
     }
@@ -107,7 +107,7 @@
     if (self) {
         _indexFilePath = indexPathURL.path;
         _bookDirectoryPath = bookDirPathURL.path;
-        _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", kNHMLocalizedStringsTableName, @"Help");
+        _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", @"NoHoldMusic", @"Help");
     }
     return self;
 }
@@ -118,7 +118,7 @@
     if (self) {
         _indexFileURL = indexURL;
         _bookDirectoryPath = bookDirPathURL.path;
-        _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", kNHMLocalizedStringsTableName, @"Help");
+        _bookTitle = NSLocalizedStringFromTable(@"helpBookTitle", @"NoHoldMusic", @"Help");
     }
     return self;
 }
@@ -142,7 +142,7 @@
 
     if (![fileManager fileExistsAtPath:bookDirPathURL.path]) {
         if (error) {
-            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoFileNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationFileNotFound", kNHMLocalizedStringsTableName, @"Help book info file not found.")}];
+            *error = [NSError errorWithDomain:kNHMHelpBookErrorDomain code:NHMHelpBookErrorInfoFileNotFound userInfo:@{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(@"helpBookInformationFileNotFound", @"NoHoldMusic", @"Help book info file not found.")}];
             return nil;
         }
     }

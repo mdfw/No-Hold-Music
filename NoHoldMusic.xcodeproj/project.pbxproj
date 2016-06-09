@@ -31,6 +31,7 @@
 		34510AD51D092121008FCD4A /* index.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34510ACD1D091FCC008FCD4A /* index.html */; };
 		34510AD61D092129008FCD4A /* setup.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34510ACE1D091FCC008FCD4A /* setup.html */; };
 		34510AD71D092129008FCD4A /* info.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34510AD11D091FF9008FCD4A /* info.plist */; };
+		34510ADC1D0931C1008FCD4A /* NoHoldMusic.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34510ADA1D0931C1008FCD4A /* NoHoldMusic.strings */; };
 		345498301CFFEB1B00B209E9 /* NHMHelpBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345498311CFFEB1B00B209E9 /* NHMHelpBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */; };
 		348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */; };
@@ -105,6 +106,7 @@
 		34510ACD1D091FCC008FCD4A /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		34510ACE1D091FCC008FCD4A /* setup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = setup.html; sourceTree = "<group>"; };
 		34510AD11D091FF9008FCD4A /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		34510ADB1D0931C1008FCD4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NoHoldMusic.strings; sourceTree = "<group>"; };
 		3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpBook.h; sourceTree = "<group>"; };
 		3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpBook.m; sourceTree = "<group>"; };
 		348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMFloatBalloonImage.h; sourceTree = "<group>"; };
@@ -181,7 +183,7 @@
 		3433D7021CD31FBD0044EFA3 /* NoHoldMusic */ = {
 			isa = PBXGroup;
 			children = (
-				348E3ABE1CE2A0FD00522044 /* FloatImage */,
+				34510ADA1D0931C1008FCD4A /* NoHoldMusic.strings */,
 				34A9A8061CE4477B00460FE3 /* NHMHelpManager.h */,
 				34A9A8071CE4477B00460FE3 /* NHMHelpManager.m */,
 				34510AA71D00FE05008FCD4A /* NoHoldMusicConstants.h */,
@@ -199,6 +201,7 @@
 				34510AB81D03F224008FCD4A /* NHMHelpSearchController.m */,
 				3433D7051CD31FBD0044EFA3 /* Info.plist */,
 				349D13C11CE38D680018D631 /* Help Window */,
+				348E3ABE1CE2A0FD00522044 /* FloatImage */,
 			);
 			path = NoHoldMusic;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34510ADC1D0931C1008FCD4A /* NoHoldMusic.strings in Resources */,
 				34A9A8251CE8F89B00460FE3 /* NHMHelpWindowTaskbarViewController.xib in Resources */,
 				34510AAE1D028AB0008FCD4A /* ReleaseWarnings.xcconfig in Resources */,
 				348E3ACA1CE2AC5B00522044 /* NHMHelpWindowController.xib in Resources */,
@@ -479,6 +483,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		34510ADA1D0931C1008FCD4A /* NoHoldMusic.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34510ADB1D0931C1008FCD4A /* en */,
+			);
+			name = NoHoldMusic.strings;
+			sourceTree = "<group>";
+		};
 		34A9A8181CE44DC500460FE3 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
