@@ -7,7 +7,13 @@
 //
 
 #import "NHMHelpSearchController.h"
+#import "NHMHelpManagerProtocols.h"
 
 @implementation NHMHelpSearchController
+
+- (BOOL)showSearchString:(nonnull NSString *)anchor inBook:(nonnull NHMHelpBook *)book withHelpWindowController:(nonnull NHMHelpWindowController *)windowController {
+    // FIXME
+    return NO;
+}
 
 @end
