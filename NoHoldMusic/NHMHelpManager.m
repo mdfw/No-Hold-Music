@@ -24,29 +24,46 @@
 
 
 @interface NHMHelpManager ()
-
 @property BOOL haveRegisteredBooks;
-
 @end
 
 
 @implementation NHMHelpManager
 
 + (id)sharedHelpManager {
+    return [NHMHelpManager sharedHelpManagerWithWindowController:nil contentController:nil searchController:nil];
+}
+
++ (nonnull instancetype)sharedHelpManagerWithWindowController:(nullable NHMHelpWindowController *)windowController contentController:(nullable id <NHMHelpManagerContentProtocol>)contentController searchController:(nullable id <NHMHelpManagerSearchProtocol>) searchController {
     static dispatch_once_t pred;
     static NHMHelpManager *helpManager = nil;
-    dispatch_once(&pred, ^{ helpManager = [[self alloc] init]; });
+    dispatch_once(&pred, ^{ helpManager = [[self alloc] initWithWindowController:nil contentController:nil searchController:nil]; });
     return helpManager;
 }
 
 - (instancetype)init {
+    return [self initWithWindowController:nil contentController:nil searchController:nil];
+}
+- (nonnull instancetype)initWithWindowController:(nullable NHMHelpWindowController *)windowController contentController:(nullable id <NHMHelpManagerContentProtocol>)contentController searchController:(nullable id <NHMHelpManagerSearchProtocol>) searchController {
     self = [super init];
     if (self) {
         _haveRegisteredBooks = NO;
         _helpBooks = [[NHMHelpBooks alloc] init];
-        [self loadHelpWindow];
-        _contentController = [[NHMHelpContentController alloc] init];
-        _searchController = [[NHMHelpSearchController alloc] init];
+        if (windowController) {
+            _helpWindowController = windowController;
+        } else {
+            [self loadHelpWindow];
+        }
+        if (contentController) {
+            _contentController = contentController;
+        } else {
+            _contentController = [[NHMHelpContentController alloc] init];
+        }
+        if (searchController) {
+            _searchController = searchController;
+        } else {
+            _searchController = [[NHMHelpSearchController alloc] init];
+        }
     }
     return self;
 }
