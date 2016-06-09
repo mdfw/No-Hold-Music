@@ -183,7 +183,6 @@
 		3433D7021CD31FBD0044EFA3 /* NoHoldMusic */ = {
 			isa = PBXGroup;
 			children = (
-				34510ADA1D0931C1008FCD4A /* NoHoldMusic.strings */,
 				34A9A8061CE4477B00460FE3 /* NHMHelpManager.h */,
 				34A9A8071CE4477B00460FE3 /* NHMHelpManager.m */,
 				34510AA71D00FE05008FCD4A /* NoHoldMusicConstants.h */,
@@ -199,9 +198,10 @@
 				34510AB41D03F1F7008FCD4A /* NHMHelpContentController.m */,
 				34510AB71D03F224008FCD4A /* NHMHelpSearchController.h */,
 				34510AB81D03F224008FCD4A /* NHMHelpSearchController.m */,
-				3433D7051CD31FBD0044EFA3 /* Info.plist */,
 				349D13C11CE38D680018D631 /* Help Window */,
 				348E3ABE1CE2A0FD00522044 /* FloatImage */,
+				34510ADA1D0931C1008FCD4A /* NoHoldMusic.strings */,
+				3433D7051CD31FBD0044EFA3 /* Info.plist */,
 			);
 			path = NoHoldMusic;
 			sourceTree = "<group>";
