@@ -7,5 +7,5 @@
 //
 
 #import <Foundation/Foundation.h>
-
 NSString *const kNHMLocalizedStringsTableName = @"NoHoldMusicStrings";
+NSString *const kNHMHelpBookIndexAnchor = @"NHMIndexAnchor";

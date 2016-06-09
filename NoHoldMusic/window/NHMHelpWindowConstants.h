@@ -14,6 +14,5 @@ typedef NS_ENUM(NSInteger, NHMHelpWindowFloatState) {
     NHMHelpWindowFloatStateOn = 1
 };
 
-FOUNDATION_EXPORT NSString *const kNHMHelpBookIndexAnchor;
 
 #endif /* NHMHelpWindowConstants_h */
