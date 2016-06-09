@@ -15,7 +15,7 @@
 		34510AAA1D00FE05008FCD4A /* NoHoldMusicConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AA81D00FE05008FCD4A /* NoHoldMusicConstants.m */; };
 		34510AAD1D028AB0008FCD4A /* DebugWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 34510AAB1D028AB0008FCD4A /* DebugWarnings.xcconfig */; };
 		34510AAE1D028AB0008FCD4A /* ReleaseWarnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 34510AAC1D028AB0008FCD4A /* ReleaseWarnings.xcconfig */; };
-		34510AB11D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AAF1D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h */; };
+		34510AB11D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AAF1D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34510AB21D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AB01D03E6A3008FCD4A /* NSApplication+NHMHelpExtension.m */; };
 		34510AB51D03F1F7008FCD4A /* NHMHelpContentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AB31D03F1F7008FCD4A /* NHMHelpContentController.h */; };
 		34510AB61D03F1F7008FCD4A /* NHMHelpContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AB41D03F1F7008FCD4A /* NHMHelpContentController.m */; };
@@ -28,6 +28,9 @@
 		34510AC71D07D1A3008FCD4A /* NHMHelpWindowContentResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 34510AC51D07D1A3008FCD4A /* NHMHelpWindowContentResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34510AC81D07D1A3008FCD4A /* NHMHelpWindowContentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AC61D07D1A3008FCD4A /* NHMHelpWindowContentResponse.m */; };
 		34510ACA1D08CD17008FCD4A /* NHMHelpWindowContentResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34510AC91D08CD16008FCD4A /* NHMHelpWindowContentResponseTests.m */; };
+		34510AD51D092121008FCD4A /* index.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34510ACD1D091FCC008FCD4A /* index.html */; };
+		34510AD61D092129008FCD4A /* setup.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34510ACE1D091FCC008FCD4A /* setup.html */; };
+		34510AD71D092129008FCD4A /* info.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34510AD11D091FF9008FCD4A /* info.plist */; };
 		345498301CFFEB1B00B209E9 /* NHMHelpBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345498311CFFEB1B00B209E9 /* NHMHelpBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */; };
 		348E3AC21CE2A0FD00522044 /* NHMFloatBalloonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */; };
@@ -59,10 +62,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		34510AD41D092102008FCD4A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = NoHoldMusic.help;
+			dstSubfolderSpec = 7;
+			files = (
+				34510AD61D092129008FCD4A /* setup.html in CopyFiles */,
+				34510AD71D092129008FCD4A /* info.plist in CopyFiles */,
+				34510AD51D092121008FCD4A /* index.html in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3425C0941CEE80D100CC7AD5 /* HelpWindowUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpWindowUITests.m; sourceTree = "<group>"; };
 		3433D7001CD31FBD0044EFA3 /* NoHoldMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoHoldMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoHoldMusic.h; sourceTree = "<group>"; };
+		3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NoHoldMusic.h; path = ../NoHoldMusic.h; sourceTree = "<group>"; };
 		3433D7051CD31FBD0044EFA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3433D70A1CD31FBE0044EFA3 /* NoHoldMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoHoldMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3433D70F1CD31FBE0044EFA3 /* NoHoldMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoHoldMusicTests.m; sourceTree = "<group>"; };
@@ -84,6 +102,9 @@
 		34510AC51D07D1A3008FCD4A /* NHMHelpWindowContentResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NHMHelpWindowContentResponse.h; path = window/NHMHelpWindowContentResponse.h; sourceTree = "<group>"; };
 		34510AC61D07D1A3008FCD4A /* NHMHelpWindowContentResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHMHelpWindowContentResponse.m; path = window/NHMHelpWindowContentResponse.m; sourceTree = "<group>"; };
 		34510AC91D08CD16008FCD4A /* NHMHelpWindowContentResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpWindowContentResponseTests.m; sourceTree = "<group>"; };
+		34510ACD1D091FCC008FCD4A /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		34510ACE1D091FCC008FCD4A /* setup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = setup.html; sourceTree = "<group>"; };
+		34510AD11D091FF9008FCD4A /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		3454982E1CFFEB1B00B209E9 /* NHMHelpBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMHelpBook.h; sourceTree = "<group>"; };
 		3454982F1CFFEB1B00B209E9 /* NHMHelpBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHMHelpBook.m; sourceTree = "<group>"; };
 		348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHMFloatBalloonImage.h; sourceTree = "<group>"; };
@@ -161,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				348E3ABE1CE2A0FD00522044 /* FloatImage */,
-				3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */,
 				34A9A8061CE4477B00460FE3 /* NHMHelpManager.h */,
 				34A9A8071CE4477B00460FE3 /* NHMHelpManager.m */,
 				34510AA71D00FE05008FCD4A /* NoHoldMusicConstants.h */,
@@ -194,9 +214,21 @@
 			path = NoHoldMusicTests;
 			sourceTree = "<group>";
 		};
+		34510ACC1D091FCC008FCD4A /* NoHoldMusic.help */ = {
+			isa = PBXGroup;
+			children = (
+				34510ACD1D091FCC008FCD4A /* index.html */,
+				34510ACE1D091FCC008FCD4A /* setup.html */,
+				34510AD11D091FF9008FCD4A /* info.plist */,
+			);
+			name = NoHoldMusic.help;
+			path = ../NoHoldMusic/NoHoldMusic.help;
+			sourceTree = "<group>";
+		};
 		348E3ABE1CE2A0FD00522044 /* FloatImage */ = {
 			isa = PBXGroup;
 			children = (
+				3433D7031CD31FBD0044EFA3 /* NoHoldMusic.h */,
 				348E3ABF1CE2A0FD00522044 /* NHMFloatBalloonImage.h */,
 				348E3AC01CE2A0FD00522044 /* NHMFloatBalloonImage.m */,
 				348E3AC11CE2A0FD00522044 /* noun_232963_cc-2.svg */,
@@ -226,6 +258,7 @@
 		34A9A80F1CE44DC400460FE3 /* NoHoldMusicDemo */ = {
 			isa = PBXGroup;
 			children = (
+				34510ACC1D091FCC008FCD4A /* NoHoldMusic.help */,
 				34A9A8101CE44DC400460FE3 /* AppDelegate.h */,
 				34A9A8111CE44DC400460FE3 /* AppDelegate.m */,
 				34A9A8161CE44DC500460FE3 /* Assets.xcassets */,
@@ -315,6 +348,7 @@
 				34A9A80A1CE44DBE00460FE3 /* Sources */,
 				34A9A80B1CE44DBE00460FE3 /* Frameworks */,
 				34A9A80C1CE44DBE00460FE3 /* Resources */,
+				34510AD41D092102008FCD4A /* CopyFiles */,
 			);
 			buildRules = (
 			);

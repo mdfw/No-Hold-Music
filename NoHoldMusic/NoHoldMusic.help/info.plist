@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NHMBookTitle</key>
+	<string>No Hold Music Help</string>
+	<key>NHMBookLanguages</key>
+	<array>
+		<string>en</string>
+	</array>
+	<key>NHMBookIndexFilePath</key>
+	<string>index.html</string>
+	<key>NHMBookVersion</key>
+	<string>1</string>
+</dict>
+</plist>
