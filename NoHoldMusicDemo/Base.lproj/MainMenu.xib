@@ -659,7 +659,7 @@
                         <items>
                             <menuItem title="NoHoldMusicDemo Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
-                                    <action selector="showHelpWindow:" target="-1" id="4eC-Zy-3nv"/>
+                                    <action selector="nhm_showHelp:" target="-1" id="QxU-ML-dY3"/>
                                 </connections>
                             </menuItem>
                         </items>

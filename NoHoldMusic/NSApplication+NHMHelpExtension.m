@@ -21,7 +21,7 @@
 @implementation NSApplication (NHMHelpExtension)
 
 - (IBAction)nhm_showHelp:(nullable id)sender {
-    [NHMHelpManager.sharedHelpManager.helpWindowController showWindow:sender];
+    [NHMHelpManager.sharedHelpManager openIndexFileInBook:nil];
 }
 
 @end

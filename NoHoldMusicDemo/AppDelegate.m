@@ -29,7 +29,7 @@
 
 - (IBAction)showNHMHelp:(id)sender {
     [self loadHelpSystem];
-    [[NSApplication sharedApplication] showHelpWindow:sender];
+    [[NSApplication sharedApplication] nhm_showHelp:sender];
 }
 
 - (void)loadHelpSystem {

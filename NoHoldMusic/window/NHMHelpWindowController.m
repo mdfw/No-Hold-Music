@@ -195,6 +195,7 @@
 
 #pragma mark - content
 - (void)showAnchor:(nonnull NSString *)anchor {
+    [self showWindow:nil];
     if (!self.contentDelegate || ![self.contentDelegate respondsToSelector:@selector(contentTypeForAnchor:)]) {
         return;
     }
