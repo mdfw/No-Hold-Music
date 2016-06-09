@@ -15,6 +15,8 @@
 
 #import "NHMHelpWindowController.h"
 #import "NHMHelpWindowProtocols.h"
+#import "NHMHelpWindowContentResponse.h"
+
 @import WebKit;
 
 @interface NHMHelpWindowController ()
@@ -222,7 +224,7 @@
         return;
     }
 
-    NSURL *url = [self.contentDelegate urlForAnchor:anchor];
+    NSURL *url = [[self.contentDelegate urlForAnchor:anchor] url];
     if (!url) {
         return;
     }
@@ -231,42 +233,89 @@
         [self setContentViewToWebView];
         if ([self.contentView respondsToSelector:@selector(loadRequest:)]) {
             [(WKWebView*)self.contentView loadRequest:urlRequest];
+            if (self.contentDelegate && [self.contentDelegate respondsToSelector:@selector(didBeginLoadingContentForAnchor:inView:)]) {
+                [self.contentDelegate didBeginLoadingContentForAnchor:anchor inView:self.contentView];
+            }
+
         }
+
     }
 }
 
 - (void)showPathForAnchor:(NSString *)anchor {
-    if (!self.contentDelegate || ![self.contentDelegate respondsToSelector:@selector(pathForAnchor:enclosingPath:)]) {
+    if (!self.contentDelegate || ![self.contentDelegate respondsToSelector:@selector(pathForAnchor:)]) {
         return;
     }
 
-    NSString *path = [self.contentDelegate pathForAnchor:anchor enclosingPath:<#(nullable NSString *)#>];
-    if (!path) {
+    NHMHelpWindowFilePathContentResponse *response = [self.contentDelegate pathForAnchor:anchor];
+    NSURL *fileURL = [NSURL fileURLWithPath:response.path];
+    if (!fileURL) {
         return;
     }
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    if (urlRequest) {
-        [self setContentViewToWebView];
-        if ([self.contentView respondsToSelector:@selector(loadRequest:)]) {
-            [(WKWebView*)self.contentView loadRequest:urlRequest];
+    NSURL *enclosingURL = [NSURL fileURLWithPath:response.enclosingPath];
+    if (!enclosingURL) {
+        enclosingURL = fileURL;
+    }
+    [self setContentViewToWebView];
+    if ([self.contentView respondsToSelector:@selector(loadFileURL:allowingReadAccessToURL:)]) {
+        [(WKWebView*)self.contentView loadFileURL:fileURL allowingReadAccessToURL:enclosingURL];
+        if (self.contentDelegate && [self.contentDelegate respondsToSelector:@selector(didBeginLoadingContentForAnchor:inView:)]) {
+            [self.contentDelegate didBeginLoadingContentForAnchor:anchor inView:self.contentView];
         }
-    }
 
+    }
 }
 
 - (void)showHTMLStringForAnchor:(NSString *)anchor {
-
+    if (!self.contentDelegate || ![self.contentDelegate respondsToSelector:@selector(htmlStringForAnchor:)]) {
+        return;
+    }
+    NHMHelpWindowHTMLStringContentResponse *response = [self.contentDelegate htmlStringForAnchor:anchor];
+    NSString *htmlString = response.htmlString;
+    if (!htmlString) {
+        return;
+    }
+    NSURL *baseURL = response.baseURL;
+    [self setContentViewToWebView];
+    if ([self.contentView respondsToSelector:@selector(loadFileURL:allowingReadAccessToURL:)]) {
+        [(WKWebView*)self.contentView loadHTMLString:htmlString baseURL:baseURL];
+        if (self.contentDelegate && [self.contentDelegate respondsToSelector:@selector(didBeginLoadingContentForAnchor:inView:)]) {
+            [self.contentDelegate didBeginLoadingContentForAnchor:anchor inView:self.contentView];
+        }
+    }
 }
 
 - (void)showAttributedStringForAnchor:(NSString *)anchor {
-
+    if (!self.contentDelegate || ![self.contentDelegate respondsToSelector:@selector(attributedStringForAnchor:)]) {
+        return;
+    }
+    NSAttributedString *attrString = [[self.contentDelegate attributedStringForAnchor:anchor] attributedString];
+    if (!attrString) {
+        return;
+    }
+    [self setContentViewToTextView];
+    if ([self.contentView respondsToSelector:@selector(textStorage)]) {
+        [[(NSTextView*)self.contentView textStorage] setAttributedString:attrString];
+        if (self.contentDelegate && [self.contentDelegate respondsToSelector:@selector(didBeginLoadingContentForAnchor:inView:)]) {
+            [self.contentDelegate didBeginLoadingContentForAnchor:anchor inView:self.contentView];
+        }
+    }
 }
 
 - (void)setContentViewToWebView {
-
+    if ([self.contentView isKindOfClass:[WKWebView class]]) {
+        return;
+    }
+    WKWebView *webview = [[WKWebView alloc] initWithFrame:self.mainView.frame];
+    self.contentView = webview;
 }
 
 - (void)setContentViewToTextView {
-
+    if ([self.contentView isKindOfClass:[NSTextView class]]) {
+        return;
+    }
+    NSTextView *textView = [[NSTextView alloc] initWithFrame:self.mainView.frame];
+    textView.editable = NO;
+    self.contentView = textView;
 }
 @end
