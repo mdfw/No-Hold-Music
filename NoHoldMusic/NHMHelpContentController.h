@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "NHMHelpManagerProtocols.h"
+#import "NHMHelpWindowProtocols.h"
 
-@interface NHMHelpContentController : NSObject <NHMHelpManagerContentProtocol>
+@interface NHMHelpContentController : NSObject <NHMHelpManagerContentProtocol, NHMHelpWindowContentProtocol>
 
 @end
