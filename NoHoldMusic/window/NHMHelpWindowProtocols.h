@@ -24,11 +24,11 @@ typedef NS_ENUM(NSUInteger, NHMHelpWindowContentType) {
 @optional
 - (nonnull NHMHelpWindowURLContentResponse *)urlForAnchor:(nonnull NSString *)anchor;
 - (nonnull NHMHelpWindowFilePathContentResponse *)pathForAnchor:(nonnull NSString *)anchor;
-- (nonnull NHMHelpWindowHTMLStringContentResponse *)htmlStringForAnchor:(nonnull NSString *)anchor baseURL:(nullable NSURL *)baseURL;
+- (nonnull NHMHelpWindowHTMLStringContentResponse *)htmlStringForAnchor:(nonnull NSString *)anchor;
 
 - (nonnull NHMHelpWindowAttributedStringContentResponse *)attributedStringForAnchor:(nonnull NSString *)anchor;
 
-- (nonnull __kindof NSView *)didBeginLoadingContentForAnchor:(nonnull NSString *)anchor;
+- (void)didBeginLoadingContentForAnchor:(nonnull NSString *)anchor inView:(nonnull __kindof NSView *)view;
 
 
 @end
