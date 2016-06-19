@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Open source replacement for Apple Help Manager.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://noholdmusic.org" # the base hostname & protocol for your site
-twitter_username: noholdmusic
+#twitter_username: noholdmusic
 github_username:  noholdmusic
 
 # Build settings
