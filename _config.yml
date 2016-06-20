@@ -7,9 +7,9 @@
 
 # Site settings
 title: No Hold Music
-email: support@noholdmusic.org
+#email: support@noholdmusic.org
 description: > # this means to ignore newlines until "baseurl:"
-  Open source replacement for Apple Help Manager.
+  Open source replacement for NSHelpManager.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://noholdmusic.org" # the base hostname & protocol for your site
 #twitter_username: noholdmusic
