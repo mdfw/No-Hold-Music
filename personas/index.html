@@ -1,0 +1,5 @@
+---
+layout: default
+---
+{% capture personas %}{% include_relative personas.md %}{% endcapture %}
+{{ personas | markdownify }}
